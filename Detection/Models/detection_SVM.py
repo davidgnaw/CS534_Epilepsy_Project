@@ -11,7 +11,7 @@ from collections import Counter
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.utils import shuffle
 from sklearn import svm, metrics
-from sklearn.metrics import RocCurveDisplay, auc
+from sklearn.metrics import RocCurveDisplay, auc, plot_confusion_matrix
 from sklearn.svm import LinearSVC
 from sklearn.model_selection import GridSearchCV, train_test_split, StratifiedKFold
 from sklearn.feature_selection import SelectFromModel
@@ -25,7 +25,7 @@ warnings.filterwarnings("ignore")
 toprint = []
 
 # Load the extracted features
-data = pd.read_csv(r"F:\Users\user\Desktop\EMORY\Classes\Fall_2021\CS_534\Project\Detection\Extracted_Features\Train\Dog_1_train.csv")
+data = pd.read_csv(r"F:\Users\user\Desktop\EMORY\Classes\Fall_2021\CS_534\Project\Detection\Extracted_Features\Train\Patient_1_train.csv")
 data = shuffle(data)
 data = data.reset_index(drop=True)
 X = data.drop(data.iloc[:, [-1]], axis=1) # Discard the class
@@ -34,7 +34,7 @@ y = data.iloc[:, [-1]]
 feature_names = data.columns[:-1]
 
 # Print
-toprint.append("Dog_1 Detection Summary")
+toprint.append("Patient_1 Detection Summary")
 toprint.append("1. One-second eeg segments: {}".format(X.shape[0]))
 toprint.append("2. Extracted features: {}".format(X.shape[1]))
 
@@ -71,25 +71,6 @@ toprint.append(Counter(y_bal))
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(X_bal, y_bal, test_size=0.2, random_state=42)
 
-# Train SVM
-svm_model = svm.SVC(kernel="linear", probability=True, random_state=42)
-svm_model.fit(X_train, y_train)
-
-# Evaluate model
-y_hat = svm_model.predict(X_test)
-
-# Metrics
-acc = metrics.accuracy_score(y_test, y_hat)
-f1 = metrics.f1_score(y_test, y_hat, average='macro')
-precision = metrics.precision_score(y_test, y_hat, average='macro')
-recall = metrics.recall_score(y_test, y_hat, average='macro')
-
-#Print
-toprint.append("7. Accuracy: {}".format(acc))
-toprint.append("8. Precision: {}".format(precision))
-toprint.append("9. Recall: {}".format(recall))
-toprint.append("10. F1-score: {}".format(f1))
-
 # Evaluate model CV
 # Run classifier with cross-validation and plot ROC curves
 cv = StratifiedKFold(n_splits=5)
@@ -97,6 +78,7 @@ classifier = svm.SVC(kernel="linear", probability=True, random_state=42)
 
 tprs = []
 aucs = []
+fold_metrics = []
 mean_fpr = np.linspace(0, 1, 100)
 
 fig, ax = plt.subplots()
@@ -115,6 +97,16 @@ for i, (train, test) in enumerate(cv.split(X_train, y_train)):
     interp_tpr[0] = 0.0
     tprs.append(interp_tpr)
     aucs.append(viz.roc_auc)
+
+    # Evaluation metrics per fold
+    y_hat_fold = classifier.predict(X_train[test])
+
+    acc = metrics.accuracy_score(y_train[test], y_hat_fold)
+    f1 = metrics.f1_score(y_train[test], y_hat_fold, average='macro')
+    precision = metrics.precision_score(y_train[test], y_hat_fold, average='macro')
+    recall = metrics.recall_score(y_train[test], y_hat_fold, average='macro')
+    fold_metrics.append([i, acc, precision, recall, f1])
+
 
 ax.plot([0, 1], [0, 1], linestyle="--", lw=2, color="r", label="Chance", alpha=0.8)
 
@@ -149,9 +141,38 @@ ax.set(
     title="Receiver operating characteristic example",
 )
 ax.legend(loc="lower right")
+plt.show()
+
+toprint.append("7. Evaluation metrics CV")
+toprint.append(["Fold", "Accuracy", "Precision", "Recall", "F1-Score"])
+for elem in fold_metrics:
+    toprint.append(elem)
+
+# Evaluate model no CV
+# Train SVM
+svm_model = svm.SVC(kernel="linear", probability=True, random_state=42)
+svm_model.fit(X_train, y_train)
+
+# Obtain predictions
+y_hat = svm_model.predict(X_test)
+
+# Metrics
+acc = metrics.accuracy_score(y_test, y_hat)
+f1 = metrics.f1_score(y_test, y_hat, average='macro')
+precision = metrics.precision_score(y_test, y_hat, average='macro')
+recall = metrics.recall_score(y_test, y_hat, average='macro')
+
+# Print
+toprint.append("8. Accuracy: {}".format(acc))
+toprint.append("9. Precision: {}".format(precision))
+toprint.append("10. Recall: {}".format(recall))
+toprint.append("11. F1-score: {}".format(f1))
+
+# Confusion Matrix
+plot_confusion_matrix(svm_model, X_test, y_test, display_labels=("Interictal", "Ictal"), cmap=plt.cm.Blues, normalize="true")
+plt.show()
 
 # Write file
 for elem in toprint:
     print(elem)
 
-plt.show()
