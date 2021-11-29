@@ -154,7 +154,7 @@ for filename in files:
     ax.set(
         xlim=[-0.05, 1.05],
         ylim=[-0.05, 1.05],
-        title="Receiver operating characteristic example",
+        title="ROC Curve",
     )
     ax.legend(loc="lower right")
 
@@ -204,7 +204,7 @@ for filename in files:
     plot_confusion_matrix(svm_model, X_test, y_test, display_labels=("Interictal", "Ictal"), cmap=plt.cm.Blues, normalize="true")
 
     # Save Confusion Matrix
-    fig_dir = fig_dir = os.path.join("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Detection/Figures_SVM", "CM_"+subject+".png")
+    fig_dir = os.path.join("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Detection/Figures_SVM", "CM_"+subject+".png")
     plt.savefig(fig_dir)
     # plt.show()
 
