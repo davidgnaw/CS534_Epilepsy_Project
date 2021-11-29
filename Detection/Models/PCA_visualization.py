@@ -1,10 +1,10 @@
 # Created by: Daniela Chanci Arrubla
-# Description: Application of PCA and K_means to the features extracted from each patient of the
+# Description: Application of PCA to the features extracted from each patient of the
 # publicly available dataset "UPenn and Mayo Clinic's Seizure Detection Challenge" downloaded
 # from kaggle
 
-import numpy as np
 import pandas as pd
+import os
 from pathlib import Path
 from matplotlib import pyplot as plt
 from sklearn.decomposition import PCA
@@ -27,7 +27,6 @@ for filename in files:
 
     # Define subject name
     subject = str(filename).split("\\")[-1].split("_")[0] + "_" + str(filename).split("\\")[-1].split("_")[1]
-    print(subject)
 
     # Dimensionality reduction with Principal Component Analysis
     principal_components = PCA(n_components=2).fit_transform(data)  # The output will have two dimensions
@@ -46,4 +45,9 @@ for filename in files:
     plt.xlabel("Principal Component 1", fontsize=13)
     plt.ylabel("Principal Component 2", fontsize=13)
     plt.legend(targets)
-    plt.show()
+
+    # Save Plot
+    fig_dir = fig_dir = os.path.join("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Detection/Figures_PCA", subject+".png")
+    plt.savefig(fig_dir)
+    # plt.show()
+
