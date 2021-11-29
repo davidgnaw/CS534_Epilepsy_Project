@@ -163,10 +163,11 @@ precision = metrics.precision_score(y_test, y_hat, average='macro')
 recall = metrics.recall_score(y_test, y_hat, average='macro')
 
 # Print
-toprint.append("8. Accuracy: {}".format(acc))
-toprint.append("9. Precision: {}".format(precision))
-toprint.append("10. Recall: {}".format(recall))
-toprint.append("11. F1-score: {}".format(f1))
+toprint.append("8. Evaluation Metrics")
+toprint.append("Accuracy: {}".format(acc))
+toprint.append("Precision: {}".format(precision))
+toprint.append("Recall: {}".format(recall))
+toprint.append("F1-score: {}".format(f1))
 
 # Confusion Matrix
 plot_confusion_matrix(svm_model, X_test, y_test, display_labels=("Interictal", "Ictal"), cmap=plt.cm.Blues, normalize="true")
