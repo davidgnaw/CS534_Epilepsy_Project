@@ -1,0 +1,81 @@
+SVM Prediction Summary
+
+
+------------------------------------------------------------------------
+Patient_1
+1. 30-seconds eeg segments: 1360
+2. Extracted features: 390
+3. Selected features: 149
+4. Selected features names:
+  ['mean_ch1', 'mean_ch2', 'mean_ch4']
+  ['mean_ch5', 'mean_ch8', 'mean_ch14']
+  ['mean_ch15', 'std_ch1', 'std_ch6']
+  ['std_ch7', 'skewness_ch2', 'skewness_ch3']
+  ['skewness_ch7', 'skewness_ch10', 'skewness_ch12']
+  ['time_corr_coef3', 'time_corr_coef5', 'time_corr_coef6']
+  ['time_corr_coef7', 'time_corr_coef8', 'time_corr_coef11']
+  ['time_corr_coef12', 'time_corr_coef17', 'time_corr_coef21']
+  ['time_corr_coef22', 'time_corr_coef23', 'time_corr_coef26']
+  ['time_corr_coef27', 'time_corr_coef28', 'time_corr_coef29']
+  ['time_corr_coef32', 'time_corr_coef33', 'time_corr_coef34']
+  ['time_corr_coef35', 'time_corr_coef36', 'time_corr_coef37']
+  ['time_corr_coef41', 'time_corr_coef46', 'time_corr_coef47']
+  ['time_corr_coef49', 'time_corr_coef51', 'time_corr_coef52']
+  ['time_corr_coef53', 'time_corr_coef54', 'time_corr_coef60']
+  ['time_corr_coef64', 'time_corr_coef65', 'time_corr_coef66']
+  ['time_corr_coef67', 'time_corr_coef68', 'time_corr_coef69']
+  ['time_corr_coef72', 'time_corr_coef73', 'time_corr_coef74']
+  ['time_corr_coef75', 'time_corr_coef77', 'time_corr_coef79']
+  ['time_corr_coef80', 'time_corr_coef83', 'time_corr_coef84']
+  ['time_corr_coef85', 'time_corr_coef86', 'time_corr_coef87']
+  ['time_corr_coef89', 'time_corr_coef92', 'time_corr_coef93']
+  ['time_corr_coef94', 'time_corr_coef97', 'time_corr_coef98']
+  ['time_corr_coef101', 'time_corr_coef103', 'time_corr_coef104']
+  ['time_corr_coef105', 'time_corr_eig1', 'time_corr_eig4']
+  ['time_corr_eig7', 'time_corr_eig14', 'power_band1_ch7']
+  ['freq_corr_coef1', 'freq_corr_coef4', 'freq_corr_coef5']
+  ['freq_corr_coef7', 'freq_corr_coef8', 'freq_corr_coef9']
+  ['freq_corr_coef10', 'freq_corr_coef11', 'freq_corr_coef12']
+  ['freq_corr_coef15', 'freq_corr_coef16', 'freq_corr_coef17']
+  ['freq_corr_coef18', 'freq_corr_coef20', 'freq_corr_coef22']
+  ['freq_corr_coef23', 'freq_corr_coef24', 'freq_corr_coef26']
+  ['freq_corr_coef27', 'freq_corr_coef28', 'freq_corr_coef29']
+  ['freq_corr_coef30', 'freq_corr_coef32', 'freq_corr_coef34']
+  ['freq_corr_coef36', 'freq_corr_coef37', 'freq_corr_coef39']
+  ['freq_corr_coef40', 'freq_corr_coef41', 'freq_corr_coef43']
+  ['freq_corr_coef46', 'freq_corr_coef48', 'freq_corr_coef49']
+  ['freq_corr_coef50', 'freq_corr_coef51', 'freq_corr_coef54']
+  ['freq_corr_coef55', 'freq_corr_coef57', 'freq_corr_coef58']
+  ['freq_corr_coef61', 'freq_corr_coef63', 'freq_corr_coef66']
+  ['freq_corr_coef68', 'freq_corr_coef70', 'freq_corr_coef73']
+  ['freq_corr_coef74', 'freq_corr_coef75', 'freq_corr_coef78']
+  ['freq_corr_coef79', 'freq_corr_coef81', 'freq_corr_coef83']
+  ['freq_corr_coef84', 'freq_corr_coef86', 'freq_corr_coef89']
+  ['freq_corr_coef92', 'freq_corr_coef93', 'freq_corr_coef94']
+  ['freq_corr_coef95', 'freq_corr_coef96', 'freq_corr_coef97']
+  ['freq_corr_coef98', 'freq_corr_coef103', 'freq_corr_coef104']
+  ['freq_corr_coef105', 'freq_corr_eig2', 'freq_corr_eig4']
+  ['freq_corr_eig8', 'freq_corr_eig9', 'freq_corr_eig10']
+  ['freq_corr_eig11', 'freq_corr_eig12']
+5. Classes distribution before balancing:
+  Counter(0: 1000, 1: 360)
+6. Classes distribution after balancing:
+  Counter({0: 1000, 1: 1000})
+7. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.984375, 0.984545347973897, 0.984375, 0.9843736265882744]
+  [1, 0.96875, 0.96875, 0.96875, 0.96875]
+  [2, 0.98125, 0.9812883315754521, 0.9812883315754521, 0.98125]
+  [3, 0.99375, 0.9937888198757764, 0.9937888198757764, 0.99375]
+  [4, 0.98125, 0.9814778633113204, 0.9813273956013907, 0.9812492675495137]
+8. Evaluation Metrics:
+  Accuracy: 0.9875
+  Precision: 0.987545018007203
+  Recall: 0.9874596784276461
+  F1-score: 0.9874961707022776
+  AUROC: 0.9987997299392363
+  RMSE: 0.11180339887498948
+9. Confusion Matrix
+  [0.98477157 0.01522843],[0.00985222 0.99014778]
+
+
