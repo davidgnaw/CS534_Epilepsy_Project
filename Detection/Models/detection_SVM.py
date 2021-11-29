@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 from collections import Counter
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.utils import shuffle
-from sklearn import svm
+from sklearn import svm, metrics
 from sklearn.svm import LinearSVC
 from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.feature_selection import SelectFromModel
@@ -55,7 +55,7 @@ toprint.append(list(feature_names[model.get_support()]))
 
 # Balance classes
 ros = RandomOverSampler(random_state=42)
-X_bal, y_bal = ros.fit_resample(X, np.array(y))
+X_bal, y_bal = ros.fit_resample(X_reduced, np.array(y))
 X_bal = StandardScaler().fit_transform(X_bal)
 
 # Print
@@ -73,7 +73,7 @@ svm_model.fit(X_train, y_train)
 
 # Evaluate model
 y_hat = svm_model.predict(X_test)
-print(y_hat)
+
 
 # Write file
 for elem in toprint:
