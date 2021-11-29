@@ -1,5 +1,5 @@
 # Created by: Daniela Chanci Arrubla
-# Description: Application of SVM to the features extracted from each patient of the
+# Description: Application of KNN to the features extracted from each patient of the
 # publicly available dataset "American Epilepsy Society Seizure Prediction Challenge" downloaded
 # from kaggle
 
@@ -12,7 +12,8 @@ from matplotlib import pyplot as plt
 from collections import Counter
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.utils import shuffle
-from sklearn import svm, metrics
+from sklearn import metrics
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import RocCurveDisplay, auc, plot_confusion_matrix, confusion_matrix
 from sklearn.svm import LinearSVC
 from sklearn.model_selection import GridSearchCV, train_test_split, StratifiedKFold
@@ -25,7 +26,7 @@ warnings.filterwarnings("ignore")
 
 # Initialize list to print
 toprint = []
-toprint.append("SVM Prediction Summary")
+toprint.append("KNN Prediction Summary")
 toprint.append("\n")
 
 # Define parent directory
@@ -90,7 +91,7 @@ for filename in files:
     # Evaluate model CV
     # Run classifier with cross-validation and plot ROC curves
     cv = StratifiedKFold(n_splits=5)
-    classifier = svm.SVC(kernel="linear", probability=True, random_state=42)
+    classifier = KNeighborsClassifier()
 
     tprs = []
     aucs = []
@@ -159,7 +160,7 @@ for filename in files:
     ax.legend(loc="lower right")
 
     # Save AUROC
-    fig_dir = os.path.join("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Prediction/Figures_SVM", "AUROC_"+subject+".png")
+    fig_dir = os.path.join("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Prediction/Figures_KNN", "AUROC_"+subject+".png")
     plt.savefig(fig_dir)
     # plt.show()
 
@@ -169,19 +170,19 @@ for filename in files:
         toprint.append("  {}".format(elem))
 
     # Evaluate model no CV
-    # Train SVM
-    svm_model = svm.SVC(kernel="linear", probability=True, random_state=42)
-    svm_model.fit(X_train, y_train)
+    # Train KNN
+    knn_model = KNeighborsClassifier()
+    knn_model.fit(X_train, y_train)
 
     # Obtain predictions
-    y_hat = svm_model.predict(X_test)
+    y_hat = knn_model.predict(X_test)
 
     # Metrics
     acc = metrics.accuracy_score(y_test, y_hat)
     f1 = metrics.f1_score(y_test, y_hat, average='macro')
     precision = metrics.precision_score(y_test, y_hat, average='macro')
     recall = metrics.recall_score(y_test, y_hat, average='macro')
-    auroc = metrics.roc_auc_score(y_test, svm_model.decision_function(X_test), average='macro')
+    auroc = metrics.roc_auc_score(y_test, knn_model.predict_proba(X_test)[:,1], average='macro')
     RMSE = metrics.mean_squared_error(y_test, y_hat, squared=False)
 
     # Print
@@ -201,18 +202,19 @@ for filename in files:
     toprint.append("  {},{}".format(conf_mat[0],conf_mat[1]))
 
     # Plot confusion Matrix
-    plot_confusion_matrix(svm_model, X_test, y_test, display_labels=("Interictal", "Preictal"), cmap=plt.cm.Blues, normalize="true")
+    plot_confusion_matrix(knn_model, X_test, y_test, display_labels=("Interictal", "Preictal"), cmap=plt.cm.Blues, normalize="true")
 
     # Save Confusion Matrix
-    fig_dir = os.path.join("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Prediction/Figures_SVM", "CM_"+subject+".png")
+    fig_dir = os.path.join("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Prediction/Figures_KNN", "CM_"+subject+".png")
     plt.savefig(fig_dir)
     # plt.show()
 
     toprint.append("\n")
 
 # Write file
-textfile = open(r"F:\Users\user\Desktop\EMORY\Classes\Fall_2021\CS_534\Project\Prediction\Results_SVM.txt", "w")
+textfile = open(r"F:\Users\user\Desktop\EMORY\Classes\Fall_2021\CS_534\Project\Prediction\Results_KNN.txt", "w")
 for elem in toprint:
     print(elem)
     textfile.write(str(elem) + "\n")
 textfile.close()
+
