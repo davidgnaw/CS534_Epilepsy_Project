@@ -2,80 +2,597 @@ SVM Prediction Summary
 
 
 ------------------------------------------------------------------------
+Dog_1
+1. 30-seconds eeg segments: 10060
+2. Extracted features: 432
+3. Classes distribution before balancing:
+  Counter(0: 9580, 1: 480)
+4. Classes distribution after balancing:
+  Counter(0: 480, 1: 480)
+5. Selected features: 123
+6. Selected features names:
+  ['mean_ch1', 'mean_ch2', 'mean_ch4']
+  ['mean_ch6', 'mean_ch7', 'mean_ch9']
+  ['mean_ch12', 'std_ch1', 'std_ch2']
+  ['std_ch5', 'kurtosis_ch1', 'kurtosis_ch3']
+  ['kurtosis_ch5', 'kurtosis_ch7', 'kurtosis_ch8']
+  ['kurtosis_ch9', 'kurtosis_ch10', 'kurtosis_ch11']
+  ['kurtosis_ch12', 'skewness_ch1', 'skewness_ch2']
+  ['skewness_ch3', 'skewness_ch5', 'skewness_ch8']
+  ['skewness_ch13', 'skewness_ch14', 'skewness_ch15']
+  ['skewness_ch16', 'time_corr_coef1', 'time_corr_coef5']
+  ['time_corr_coef12', 'time_corr_coef19', 'time_corr_coef20']
+  ['time_corr_coef23', 'time_corr_coef26', 'time_corr_coef31']
+  ['time_corr_coef33', 'time_corr_coef34', 'time_corr_coef35']
+  ['time_corr_coef42', 'time_corr_coef46', 'time_corr_coef47']
+  ['time_corr_coef50', 'time_corr_coef52', 'time_corr_coef56']
+  ['time_corr_coef57', 'time_corr_coef60', 'time_corr_coef64']
+  ['time_corr_coef66', 'time_corr_coef71', 'time_corr_coef76']
+  ['time_corr_coef78', 'time_corr_coef83', 'time_corr_coef84']
+  ['time_corr_coef92', 'time_corr_coef93', 'time_corr_coef101']
+  ['time_corr_coef102', 'time_corr_coef103', 'time_corr_coef104']
+  ['time_corr_coef105', 'time_corr_coef108', 'time_corr_coef109']
+  ['time_corr_coef117', 'time_corr_eig5', 'time_corr_eig6']
+  ['time_corr_eig7', 'time_corr_eig8', 'time_corr_eig10']
+  ['time_corr_eig14', 'time_corr_eig16', 'power_band1_ch5']
+  ['power_band1_ch7', 'power_band1_ch8', 'power_band1_ch13']
+  ['power_band2_ch1', 'power_band2_ch4', 'power_band2_ch9']
+  ['power_band2_ch10', 'power_band3_ch2', 'power_band3_ch7']
+  ['power_band3_ch9', 'power_band3_ch11', 'power_band3_ch13']
+  ['power_band3_ch14', 'power_band4_ch4', 'power_band4_ch6']
+  ['power_band4_ch7', 'power_band4_ch8', 'power_band4_ch9']
+  ['power_band4_ch12', 'power_band4_ch14', 'power_band5_ch1']
+  ['power_band5_ch2', 'power_band5_ch3', 'power_band5_ch4']
+  ['power_band5_ch8', 'power_band6_ch1', 'power_band6_ch5']
+  ['power_band6_ch13', 'freq_corr_coef3', 'freq_corr_coef5']
+  ['freq_corr_coef8', 'freq_corr_coef11', 'freq_corr_coef23']
+  ['freq_corr_coef31', 'freq_corr_coef38', 'freq_corr_coef39']
+  ['freq_corr_coef40', 'freq_corr_coef47', 'freq_corr_coef53']
+  ['freq_corr_coef56', 'freq_corr_coef57', 'freq_corr_coef63']
+  ['freq_corr_coef64', 'freq_corr_coef76', 'freq_corr_coef78']
+  ['freq_corr_coef91', 'freq_corr_coef99', 'freq_corr_coef103']
+  ['freq_corr_coef116', 'freq_corr_eig8', 'freq_corr_eig12']
+7. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.8766233766233766, 0.8782181571815718, 0.8766233766233766, 0.876493183065299]
+  [1, 0.8701298701298701, 0.8712737127371273, 0.869770580296896, 0.8699324324324325]
+  [2, 0.8441558441558441, 0.8441295546558705, 0.8441295546558705, 0.8441295546558705]
+  [3, 0.8888888888888888, 0.889554794520548, 0.888755980861244, 0.8888128927456931]
+  [4, 0.8758169934640523, 0.8758974358974358, 0.8757689678742311, 0.8757957701345866]
+8. Evaluation Metrics:
+  Accuracy: 0.875
+  Precision: 0.8768360352518768
+  Recall: 0.8761811665037471
+  F1-score: 0.8749864351600651
+  AUROC: 0.9330943847072879
+  RMSE: 0.3535533905932738
+9. Confusion Matrix
+  [0.83838384 0.16161616],[0.08602151 0.91397849]
+
+
+------------------------------------------------------------------------
+Dog_2
+1. 30-seconds eeg segments: 10840
+2. Extracted features: 432
+3. Classes distribution before balancing:
+  Counter(0: 10000, 1: 840)
+4. Classes distribution after balancing:
+  Counter(0: 840, 1: 840)
+5. Selected features: 151
+6. Selected features names:
+  ['mean_ch1', 'mean_ch3', 'mean_ch4']
+  ['mean_ch6', 'mean_ch7', 'mean_ch9']
+  ['mean_ch10', 'mean_ch11', 'mean_ch12']
+  ['mean_ch13', 'mean_ch14', 'mean_ch15']
+  ['mean_ch16', 'kurtosis_ch1', 'kurtosis_ch2']
+  ['kurtosis_ch4', 'kurtosis_ch5', 'kurtosis_ch6']
+  ['kurtosis_ch8', 'kurtosis_ch11', 'kurtosis_ch15']
+  ['skewness_ch1', 'skewness_ch3', 'skewness_ch5']
+  ['skewness_ch6', 'skewness_ch8', 'skewness_ch9']
+  ['skewness_ch11', 'skewness_ch12', 'skewness_ch15']
+  ['skewness_ch16', 'time_corr_coef2', 'time_corr_coef3']
+  ['time_corr_coef5', 'time_corr_coef7', 'time_corr_coef8']
+  ['time_corr_coef10', 'time_corr_coef14', 'time_corr_coef16']
+  ['time_corr_coef19', 'time_corr_coef22', 'time_corr_coef29']
+  ['time_corr_coef34', 'time_corr_coef35', 'time_corr_coef36']
+  ['time_corr_coef47', 'time_corr_coef48', 'time_corr_coef49']
+  ['time_corr_coef52', 'time_corr_coef58', 'time_corr_coef59']
+  ['time_corr_coef63', 'time_corr_coef72', 'time_corr_coef74']
+  ['time_corr_coef75', 'time_corr_coef78', 'time_corr_coef83']
+  ['time_corr_coef87', 'time_corr_coef90', 'time_corr_coef93']
+  ['time_corr_coef96', 'time_corr_coef97', 'time_corr_coef98']
+  ['time_corr_coef102', 'time_corr_coef103', 'time_corr_coef104']
+  ['time_corr_coef106', 'time_corr_coef107', 'time_corr_coef110']
+  ['time_corr_coef113', 'time_corr_coef114', 'time_corr_coef115']
+  ['time_corr_coef117', 'time_corr_coef118', 'time_corr_coef120']
+  ['time_corr_eig1', 'time_corr_eig9', 'time_corr_eig10']
+  ['time_corr_eig15', 'power_band1_ch3', 'power_band1_ch5']
+  ['power_band1_ch14', 'power_band1_ch15', 'power_band2_ch1']
+  ['power_band2_ch3', 'power_band2_ch4', 'power_band2_ch5']
+  ['power_band2_ch6', 'power_band2_ch13', 'power_band2_ch16']
+  ['power_band3_ch2', 'power_band3_ch7', 'power_band3_ch15']
+  ['power_band4_ch1', 'power_band4_ch2', 'power_band4_ch3']
+  ['power_band4_ch5', 'power_band4_ch7', 'power_band4_ch12']
+  ['power_band4_ch15', 'power_band5_ch1', 'power_band5_ch5']
+  ['power_band5_ch7', 'power_band5_ch10', 'power_band5_ch12']
+  ['power_band5_ch14', 'power_band5_ch15', 'power_band5_ch16']
+  ['power_band6_ch1', 'power_band6_ch4', 'power_band6_ch8']
+  ['power_band6_ch9', 'power_band6_ch10', 'power_band6_ch11']
+  ['power_band6_ch15', 'freq_corr_coef6', 'freq_corr_coef7']
+  ['freq_corr_coef10', 'freq_corr_coef14', 'freq_corr_coef15']
+  ['freq_corr_coef17', 'freq_corr_coef21', 'freq_corr_coef22']
+  ['freq_corr_coef23', 'freq_corr_coef24', 'freq_corr_coef25']
+  ['freq_corr_coef30', 'freq_corr_coef31', 'freq_corr_coef33']
+  ['freq_corr_coef34', 'freq_corr_coef42', 'freq_corr_coef44']
+  ['freq_corr_coef51', 'freq_corr_coef54', 'freq_corr_coef55']
+  ['freq_corr_coef70', 'freq_corr_coef73', 'freq_corr_coef77']
+  ['freq_corr_coef78', 'freq_corr_coef81', 'freq_corr_coef84']
+  ['freq_corr_coef92', 'freq_corr_coef94', 'freq_corr_coef96']
+  ['freq_corr_coef100', 'freq_corr_coef106', 'freq_corr_coef117']
+  ['freq_corr_coef119', 'freq_corr_coef120', 'freq_corr_eig3']
+  ['freq_corr_eig11']
+7. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.9925650557620818, 0.9927536231884058, 0.9924812030075187, 0.9925624861756249]
+  [1, 0.9776951672862454, 0.977825702278257, 0.9776672194582643, 0.9776923927465724]
+  [2, 0.9851301115241635, 0.9856115107913669, 0.9850746268656716, 0.9851249723512497]
+  [3, 0.9739776951672863, 0.974250470184755, 0.9739358761746821, 0.9739719400096758]
+  [4, 1.0, 1.0, 1.0, 1.0]
+8. Evaluation Metrics:
+  Accuracy: 0.9910714285714286
+  Precision: 0.9910179640718563
+  Recall: 0.9912790697674418
+  F1-score: 0.9910694509661472
+  AUROC: 0.9999290981281905
+  RMSE: 0.0944911182523068
+9. Confusion Matrix
+  [0.98255814 0.01744186],[0. 1.]
+
+
+------------------------------------------------------------------------
+Dog_3
+1. 30-seconds eeg segments: 30240
+2. Extracted features: 432
+3. Classes distribution before balancing:
+  Counter(0: 28800, 1: 1440)
+4. Classes distribution after balancing:
+  Counter(0: 1440, 1: 1440)
+5. Selected features: 271
+6. Selected features names:
+  ['mean_ch1', 'mean_ch2', 'mean_ch5']
+  ['mean_ch6', 'mean_ch7', 'mean_ch9']
+  ['mean_ch10', 'mean_ch12', 'mean_ch13']
+  ['mean_ch14', 'mean_ch15', 'std_ch3']
+  ['std_ch4', 'std_ch5', 'std_ch9']
+  ['std_ch10', 'std_ch12', 'std_ch13']
+  ['std_ch16', 'kurtosis_ch2', 'kurtosis_ch3']
+  ['kurtosis_ch4', 'kurtosis_ch5', 'kurtosis_ch6']
+  ['kurtosis_ch7', 'kurtosis_ch11', 'kurtosis_ch12']
+  ['kurtosis_ch15', 'kurtosis_ch16', 'skewness_ch3']
+  ['skewness_ch7', 'skewness_ch8', 'skewness_ch10']
+  ['skewness_ch11', 'skewness_ch12', 'skewness_ch15']
+  ['skewness_ch16', 'time_corr_coef1', 'time_corr_coef2']
+  ['time_corr_coef3', 'time_corr_coef5', 'time_corr_coef8']
+  ['time_corr_coef9', 'time_corr_coef11', 'time_corr_coef12']
+  ['time_corr_coef13', 'time_corr_coef14', 'time_corr_coef18']
+  ['time_corr_coef21', 'time_corr_coef23', 'time_corr_coef25']
+  ['time_corr_coef26', 'time_corr_coef28', 'time_corr_coef30']
+  ['time_corr_coef31', 'time_corr_coef33', 'time_corr_coef34']
+  ['time_corr_coef35', 'time_corr_coef36', 'time_corr_coef37']
+  ['time_corr_coef40', 'time_corr_coef41', 'time_corr_coef42']
+  ['time_corr_coef45', 'time_corr_coef46', 'time_corr_coef47']
+  ['time_corr_coef48', 'time_corr_coef49', 'time_corr_coef50']
+  ['time_corr_coef51', 'time_corr_coef53', 'time_corr_coef57']
+  ['time_corr_coef58', 'time_corr_coef59', 'time_corr_coef63']
+  ['time_corr_coef64', 'time_corr_coef65', 'time_corr_coef66']
+  ['time_corr_coef68', 'time_corr_coef69', 'time_corr_coef70']
+  ['time_corr_coef71', 'time_corr_coef73', 'time_corr_coef74']
+  ['time_corr_coef76', 'time_corr_coef77', 'time_corr_coef78']
+  ['time_corr_coef79', 'time_corr_coef80', 'time_corr_coef81']
+  ['time_corr_coef82', 'time_corr_coef83', 'time_corr_coef84']
+  ['time_corr_coef86', 'time_corr_coef87', 'time_corr_coef89']
+  ['time_corr_coef90', 'time_corr_coef93', 'time_corr_coef94']
+  ['time_corr_coef96', 'time_corr_coef97', 'time_corr_coef98']
+  ['time_corr_coef99', 'time_corr_coef100', 'time_corr_coef101']
+  ['time_corr_coef102', 'time_corr_coef103', 'time_corr_coef104']
+  ['time_corr_coef106', 'time_corr_coef107', 'time_corr_coef108']
+  ['time_corr_coef109', 'time_corr_coef110', 'time_corr_coef111']
+  ['time_corr_coef112', 'time_corr_coef114', 'time_corr_coef116']
+  ['time_corr_coef117', 'time_corr_coef118', 'time_corr_coef119']
+  ['time_corr_coef120', 'time_corr_eig1', 'time_corr_eig2']
+  ['time_corr_eig4', 'time_corr_eig6', 'time_corr_eig8']
+  ['time_corr_eig9', 'time_corr_eig10', 'time_corr_eig11']
+  ['time_corr_eig12', 'time_corr_eig13', 'time_corr_eig14']
+  ['time_corr_eig15', 'power_band1_ch6', 'power_band1_ch11']
+  ['power_band1_ch14', 'power_band1_ch16', 'power_band2_ch1']
+  ['power_band2_ch2', 'power_band2_ch5', 'power_band2_ch8']
+  ['power_band2_ch9', 'power_band2_ch10', 'power_band2_ch11']
+  ['power_band2_ch12', 'power_band2_ch14', 'power_band2_ch15']
+  ['power_band2_ch16', 'power_band3_ch1', 'power_band3_ch3']
+  ['power_band3_ch6', 'power_band3_ch7', 'power_band3_ch9']
+  ['power_band3_ch12', 'power_band3_ch13', 'power_band3_ch16']
+  ['power_band4_ch1', 'power_band4_ch2', 'power_band4_ch3']
+  ['power_band4_ch5', 'power_band4_ch6', 'power_band4_ch8']
+  ['power_band4_ch9', 'power_band4_ch11', 'power_band4_ch13']
+  ['power_band4_ch14', 'power_band4_ch16', 'power_band5_ch1']
+  ['power_band5_ch2', 'power_band5_ch3', 'power_band5_ch4']
+  ['power_band5_ch5', 'power_band5_ch6', 'power_band5_ch7']
+  ['power_band5_ch8', 'power_band5_ch9', 'power_band5_ch13']
+  ['power_band5_ch14', 'power_band5_ch15', 'power_band5_ch16']
+  ['power_band6_ch1', 'power_band6_ch2', 'power_band6_ch3']
+  ['power_band6_ch6', 'power_band6_ch7', 'power_band6_ch11']
+  ['power_band6_ch12', 'power_band6_ch14', 'power_band6_ch16']
+  ['freq_corr_coef2', 'freq_corr_coef3', 'freq_corr_coef4']
+  ['freq_corr_coef5', 'freq_corr_coef6', 'freq_corr_coef7']
+  ['freq_corr_coef9', 'freq_corr_coef12', 'freq_corr_coef13']
+  ['freq_corr_coef17', 'freq_corr_coef18', 'freq_corr_coef20']
+  ['freq_corr_coef25', 'freq_corr_coef26', 'freq_corr_coef28']
+  ['freq_corr_coef29', 'freq_corr_coef30', 'freq_corr_coef31']
+  ['freq_corr_coef32', 'freq_corr_coef33', 'freq_corr_coef35']
+  ['freq_corr_coef38', 'freq_corr_coef39', 'freq_corr_coef41']
+  ['freq_corr_coef42', 'freq_corr_coef43', 'freq_corr_coef45']
+  ['freq_corr_coef47', 'freq_corr_coef48', 'freq_corr_coef49']
+  ['freq_corr_coef50', 'freq_corr_coef52', 'freq_corr_coef53']
+  ['freq_corr_coef54', 'freq_corr_coef55', 'freq_corr_coef56']
+  ['freq_corr_coef57', 'freq_corr_coef58', 'freq_corr_coef59']
+  ['freq_corr_coef63', 'freq_corr_coef65', 'freq_corr_coef66']
+  ['freq_corr_coef67', 'freq_corr_coef69', 'freq_corr_coef70']
+  ['freq_corr_coef72', 'freq_corr_coef73', 'freq_corr_coef74']
+  ['freq_corr_coef75', 'freq_corr_coef77', 'freq_corr_coef81']
+  ['freq_corr_coef82', 'freq_corr_coef84', 'freq_corr_coef85']
+  ['freq_corr_coef87', 'freq_corr_coef88', 'freq_corr_coef89']
+  ['freq_corr_coef91', 'freq_corr_coef93', 'freq_corr_coef95']
+  ['freq_corr_coef96', 'freq_corr_coef97', 'freq_corr_coef98']
+  ['freq_corr_coef100', 'freq_corr_coef101', 'freq_corr_coef102']
+  ['freq_corr_coef104', 'freq_corr_coef106', 'freq_corr_coef107']
+  ['freq_corr_coef108', 'freq_corr_coef110', 'freq_corr_coef111']
+  ['freq_corr_coef118', 'freq_corr_coef119', 'freq_corr_coef120']
+  ['freq_corr_eig2', 'freq_corr_eig4', 'freq_corr_eig8']
+  ['freq_corr_eig9', 'freq_corr_eig12', 'freq_corr_eig13']
+  ['freq_corr_eig14']
+7. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.9197396963123644, 0.9198859143793064, 0.9198068814937509, 0.9197381856510303]
+  [1, 0.9175704989154013, 0.9176173801724463, 0.9175387742809817, 0.9175608011444921]
+  [2, 0.9002169197396963, 0.9009426847662141, 0.9002635046113308, 0.9001788740350216]
+  [3, 0.913232104121475, 0.9132566631531396, 0.9132411067193675, 0.9132316958403914]
+  [4, 0.8891304347826087, 0.891699634814364, 0.8893079264258303, 0.888978803753709]
+8. Evaluation Metrics:
+  Accuracy: 0.9149305555555556
+  Precision: 0.9149305555555556
+  Recall: 0.9150556567252379
+  F1-score: 0.914924144915916
+  AUROC: 0.9767363330479143
+  RMSE: 0.2916666666666667
+9. Confusion Matrix
+  [0.92226148 0.07773852],[0.09215017 0.90784983]
+
+
+------------------------------------------------------------------------
+Dog_4
+1. 30-seconds eeg segments: 18020
+2. Extracted features: 432
+3. Classes distribution before balancing:
+  Counter(0: 16080, 1: 1940)
+4. Classes distribution after balancing:
+  Counter(0: 1940, 1: 1940)
+5. Selected features: 330
+6. Selected features names:
+  ['mean_ch2', 'mean_ch3', 'mean_ch4']
+  ['mean_ch5', 'mean_ch6', 'mean_ch7']
+  ['mean_ch8', 'mean_ch9', 'mean_ch10']
+  ['mean_ch11', 'mean_ch12', 'mean_ch13']
+  ['mean_ch14', 'mean_ch16', 'std_ch3']
+  ['std_ch7', 'std_ch11', 'std_ch13']
+  ['std_ch15', 'std_ch16', 'kurtosis_ch1']
+  ['kurtosis_ch2', 'kurtosis_ch3', 'kurtosis_ch5']
+  ['kurtosis_ch6', 'kurtosis_ch8', 'kurtosis_ch9']
+  ['kurtosis_ch12', 'kurtosis_ch13', 'kurtosis_ch14']
+  ['kurtosis_ch15', 'skewness_ch1', 'skewness_ch2']
+  ['skewness_ch3', 'skewness_ch4', 'skewness_ch7']
+  ['skewness_ch8', 'skewness_ch9', 'skewness_ch10']
+  ['skewness_ch12', 'skewness_ch13', 'skewness_ch14']
+  ['skewness_ch15', 'skewness_ch16', 'time_corr_coef1']
+  ['time_corr_coef3', 'time_corr_coef5', 'time_corr_coef6']
+  ['time_corr_coef7', 'time_corr_coef8', 'time_corr_coef10']
+  ['time_corr_coef11', 'time_corr_coef14', 'time_corr_coef17']
+  ['time_corr_coef18', 'time_corr_coef19', 'time_corr_coef20']
+  ['time_corr_coef21', 'time_corr_coef22', 'time_corr_coef23']
+  ['time_corr_coef25', 'time_corr_coef26', 'time_corr_coef27']
+  ['time_corr_coef28', 'time_corr_coef29', 'time_corr_coef30']
+  ['time_corr_coef32', 'time_corr_coef34', 'time_corr_coef35']
+  ['time_corr_coef36', 'time_corr_coef37', 'time_corr_coef39']
+  ['time_corr_coef40', 'time_corr_coef41', 'time_corr_coef42']
+  ['time_corr_coef43', 'time_corr_coef44', 'time_corr_coef45']
+  ['time_corr_coef48', 'time_corr_coef50', 'time_corr_coef51']
+  ['time_corr_coef52', 'time_corr_coef53', 'time_corr_coef55']
+  ['time_corr_coef56', 'time_corr_coef57', 'time_corr_coef58']
+  ['time_corr_coef59', 'time_corr_coef61', 'time_corr_coef62']
+  ['time_corr_coef63', 'time_corr_coef65', 'time_corr_coef66']
+  ['time_corr_coef68', 'time_corr_coef70', 'time_corr_coef71']
+  ['time_corr_coef72', 'time_corr_coef75', 'time_corr_coef76']
+  ['time_corr_coef77', 'time_corr_coef78', 'time_corr_coef80']
+  ['time_corr_coef81', 'time_corr_coef84', 'time_corr_coef85']
+  ['time_corr_coef86', 'time_corr_coef87', 'time_corr_coef89']
+  ['time_corr_coef90', 'time_corr_coef93', 'time_corr_coef96']
+  ['time_corr_coef97', 'time_corr_coef98', 'time_corr_coef100']
+  ['time_corr_coef101', 'time_corr_coef102', 'time_corr_coef103']
+  ['time_corr_coef104', 'time_corr_coef105', 'time_corr_coef106']
+  ['time_corr_coef108', 'time_corr_coef110', 'time_corr_coef113']
+  ['time_corr_coef114', 'time_corr_coef115', 'time_corr_coef117']
+  ['time_corr_coef118', 'time_corr_coef119', 'time_corr_coef120']
+  ['time_corr_eig2', 'time_corr_eig3', 'time_corr_eig4']
+  ['time_corr_eig5', 'time_corr_eig6', 'time_corr_eig7']
+  ['time_corr_eig9', 'time_corr_eig10', 'time_corr_eig11']
+  ['time_corr_eig12', 'time_corr_eig13', 'time_corr_eig15']
+  ['power_band1_ch1', 'power_band1_ch2', 'power_band1_ch3']
+  ['power_band1_ch4', 'power_band1_ch5', 'power_band1_ch6']
+  ['power_band1_ch7', 'power_band1_ch8', 'power_band1_ch9']
+  ['power_band1_ch10', 'power_band1_ch13', 'power_band1_ch14']
+  ['power_band1_ch16', 'power_band2_ch1', 'power_band2_ch2']
+  ['power_band2_ch3', 'power_band2_ch6', 'power_band2_ch8']
+  ['power_band2_ch9', 'power_band2_ch10', 'power_band2_ch11']
+  ['power_band2_ch12', 'power_band2_ch13', 'power_band2_ch14']
+  ['power_band2_ch16', 'power_band3_ch1', 'power_band3_ch2']
+  ['power_band3_ch3', 'power_band3_ch5', 'power_band3_ch6']
+  ['power_band3_ch7', 'power_band3_ch8', 'power_band3_ch9']
+  ['power_band3_ch10', 'power_band3_ch12', 'power_band3_ch13']
+  ['power_band3_ch14', 'power_band3_ch15', 'power_band3_ch16']
+  ['power_band4_ch1', 'power_band4_ch2', 'power_band4_ch3']
+  ['power_band4_ch5', 'power_band4_ch6', 'power_band4_ch7']
+  ['power_band4_ch8', 'power_band4_ch9', 'power_band4_ch10']
+  ['power_band4_ch11', 'power_band4_ch12', 'power_band4_ch13']
+  ['power_band4_ch14', 'power_band4_ch15', 'power_band5_ch1']
+  ['power_band5_ch2', 'power_band5_ch3', 'power_band5_ch6']
+  ['power_band5_ch7', 'power_band5_ch9', 'power_band5_ch10']
+  ['power_band5_ch11', 'power_band5_ch13', 'power_band5_ch14']
+  ['power_band5_ch15', 'power_band5_ch16', 'power_band6_ch1']
+  ['power_band6_ch2', 'power_band6_ch3', 'power_band6_ch4']
+  ['power_band6_ch5', 'power_band6_ch6', 'power_band6_ch7']
+  ['power_band6_ch8', 'power_band6_ch9', 'power_band6_ch10']
+  ['power_band6_ch11', 'power_band6_ch12', 'power_band6_ch13']
+  ['power_band6_ch14', 'power_band6_ch15', 'freq_corr_coef1']
+  ['freq_corr_coef3', 'freq_corr_coef4', 'freq_corr_coef5']
+  ['freq_corr_coef6', 'freq_corr_coef8', 'freq_corr_coef9']
+  ['freq_corr_coef10', 'freq_corr_coef13', 'freq_corr_coef14']
+  ['freq_corr_coef15', 'freq_corr_coef16', 'freq_corr_coef17']
+  ['freq_corr_coef18', 'freq_corr_coef19', 'freq_corr_coef20']
+  ['freq_corr_coef22', 'freq_corr_coef23', 'freq_corr_coef24']
+  ['freq_corr_coef25', 'freq_corr_coef26', 'freq_corr_coef27']
+  ['freq_corr_coef29', 'freq_corr_coef30', 'freq_corr_coef31']
+  ['freq_corr_coef32', 'freq_corr_coef33', 'freq_corr_coef35']
+  ['freq_corr_coef36', 'freq_corr_coef37', 'freq_corr_coef38']
+  ['freq_corr_coef39', 'freq_corr_coef40', 'freq_corr_coef42']
+  ['freq_corr_coef43', 'freq_corr_coef44', 'freq_corr_coef45']
+  ['freq_corr_coef47', 'freq_corr_coef48', 'freq_corr_coef50']
+  ['freq_corr_coef52', 'freq_corr_coef53', 'freq_corr_coef54']
+  ['freq_corr_coef55', 'freq_corr_coef56', 'freq_corr_coef57']
+  ['freq_corr_coef58', 'freq_corr_coef59', 'freq_corr_coef60']
+  ['freq_corr_coef61', 'freq_corr_coef62', 'freq_corr_coef64']
+  ['freq_corr_coef65', 'freq_corr_coef66', 'freq_corr_coef68']
+  ['freq_corr_coef70', 'freq_corr_coef72', 'freq_corr_coef73']
+  ['freq_corr_coef74', 'freq_corr_coef75', 'freq_corr_coef76']
+  ['freq_corr_coef77', 'freq_corr_coef78', 'freq_corr_coef79']
+  ['freq_corr_coef81', 'freq_corr_coef82', 'freq_corr_coef83']
+  ['freq_corr_coef84', 'freq_corr_coef86', 'freq_corr_coef87']
+  ['freq_corr_coef89', 'freq_corr_coef90', 'freq_corr_coef92']
+  ['freq_corr_coef94', 'freq_corr_coef96', 'freq_corr_coef98']
+  ['freq_corr_coef101', 'freq_corr_coef102', 'freq_corr_coef103']
+  ['freq_corr_coef104', 'freq_corr_coef105', 'freq_corr_coef106']
+  ['freq_corr_coef107', 'freq_corr_coef108', 'freq_corr_coef109']
+  ['freq_corr_coef110', 'freq_corr_coef111', 'freq_corr_coef112']
+  ['freq_corr_coef113', 'freq_corr_coef114', 'freq_corr_coef115']
+  ['freq_corr_coef116', 'freq_corr_coef117', 'freq_corr_coef118']
+  ['freq_corr_coef119', 'freq_corr_coef120', 'freq_corr_eig1']
+  ['freq_corr_eig3', 'freq_corr_eig4', 'freq_corr_eig5']
+  ['freq_corr_eig6', 'freq_corr_eig7', 'freq_corr_eig9']
+  ['freq_corr_eig10', 'freq_corr_eig11', 'freq_corr_eig12']
+  ['freq_corr_eig13', 'freq_corr_eig14', 'freq_corr_eig15']
+7. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.8615136876006442, 0.8616050125521277, 0.861582506949919, 0.861513328492895]
+  [1, 0.8727858293075684, 0.8731756939110216, 0.8729202107796357, 0.872773952619909]
+  [2, 0.8792270531400966, 0.8792747457978833, 0.8791803244678644, 0.8792070066419937]
+  [3, 0.9001610305958132, 0.9003579580825898, 0.9002582880378407, 0.9001587005227781]
+  [4, 0.9129032258064517, 0.9129955029980013, 0.9128579753579753, 0.9128887223679281]
+8. Evaluation Metrics:
+  Accuracy: 0.9007731958762887
+  Precision: 0.9014434461275755
+  Recall: 0.9001595744680851
+  F1-score: 0.9005470974872132
+  AUROC: 0.9654255319148937
+  RMSE: 0.3150028636754138
+9. Confusion Matrix
+  [0.88031915 0.11968085],[0.08 0.92]
+
+
+------------------------------------------------------------------------
+Dog_5
+1. 30-seconds eeg segments: 9600
+2. Extracted features: 390
+3. Classes distribution before balancing:
+  Counter(0: 9000, 1: 600)
+4. Classes distribution after balancing:
+  Counter(0: 600, 1: 600)
+5. Selected features: 108
+6. Selected features names:
+  ['mean_ch2', 'mean_ch4', 'mean_ch5']
+  ['mean_ch7', 'mean_ch8', 'mean_ch10']
+  ['mean_ch11', 'mean_ch12', 'mean_ch14']
+  ['std_ch3', 'kurtosis_ch1', 'kurtosis_ch3']
+  ['kurtosis_ch8', 'kurtosis_ch11', 'skewness_ch2']
+  ['skewness_ch3', 'skewness_ch6', 'skewness_ch9']
+  ['skewness_ch12', 'skewness_ch13', 'time_corr_coef6']
+  ['time_corr_coef7', 'time_corr_coef9', 'time_corr_coef10']
+  ['time_corr_coef11', 'time_corr_coef15', 'time_corr_coef16']
+  ['time_corr_coef18', 'time_corr_coef19', 'time_corr_coef20']
+  ['time_corr_coef21', 'time_corr_coef24', 'time_corr_coef26']
+  ['time_corr_coef27', 'time_corr_coef29', 'time_corr_coef33']
+  ['time_corr_coef34', 'time_corr_coef42', 'time_corr_coef46']
+  ['time_corr_coef52', 'time_corr_coef54', 'time_corr_coef55']
+  ['time_corr_coef56', 'time_corr_coef60', 'time_corr_coef62']
+  ['time_corr_coef63', 'time_corr_coef64', 'time_corr_coef73']
+  ['time_corr_coef78', 'time_corr_coef79', 'time_corr_coef81']
+  ['time_corr_coef84', 'time_corr_coef87', 'time_corr_coef89']
+  ['time_corr_coef92', 'time_corr_coef94', 'time_corr_coef100']
+  ['time_corr_eig6', 'time_corr_eig12', 'time_corr_eig13']
+  ['power_band1_ch15', 'power_band2_ch2', 'power_band2_ch3']
+  ['power_band2_ch5', 'power_band2_ch6', 'power_band3_ch4']
+  ['power_band3_ch6', 'power_band3_ch9', 'power_band3_ch11']
+  ['power_band3_ch14', 'power_band3_ch15', 'power_band4_ch1']
+  ['power_band4_ch2', 'power_band4_ch3', 'power_band4_ch4']
+  ['power_band4_ch9', 'power_band4_ch10', 'power_band4_ch11']
+  ['power_band4_ch13', 'power_band5_ch4', 'power_band5_ch5']
+  ['power_band5_ch6', 'power_band5_ch9', 'power_band5_ch12']
+  ['power_band5_ch13', 'power_band6_ch2', 'power_band6_ch6']
+  ['power_band6_ch9', 'freq_corr_coef8', 'freq_corr_coef19']
+  ['freq_corr_coef21', 'freq_corr_coef27', 'freq_corr_coef33']
+  ['freq_corr_coef39', 'freq_corr_coef42', 'freq_corr_coef45']
+  ['freq_corr_coef46', 'freq_corr_coef47', 'freq_corr_coef49']
+  ['freq_corr_coef57', 'freq_corr_coef60', 'freq_corr_coef79']
+  ['freq_corr_coef86', 'freq_corr_coef89', 'freq_corr_coef94']
+  ['freq_corr_coef105', 'freq_corr_eig11', 'freq_corr_eig12']
+7. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.9739583333333334, 0.9740097666847531, 0.9739583333333333, 0.9739576268887502]
+  [1, 0.96875, 0.9695652173913043, 0.96875, 0.9687364307425097]
+  [2, 0.9791666666666666, 0.98, 0.9791666666666667, 0.9791576204950065]
+  [3, 0.984375, 0.9844275637547477, 0.984375, 0.9843745761332501]
+  [4, 0.9739583333333334, 0.9744216357119583, 0.9739583333333334, 0.973951973951974]
+8. Evaluation Metrics:
+  Accuracy: 0.9791666666666666
+  Precision: 0.9791999444405861
+  Recall: 0.9791666666666666
+  F1-score: 0.9791663049705723
+  AUROC: 0.9995833333333333
+  RMSE: 0.14433756729740643
+9. Confusion Matrix
+  [0.975 0.025],[0.01666667 0.98333333]
+
+
+------------------------------------------------------------------------
 Patient_1
 1. 30-seconds eeg segments: 1360
 2. Extracted features: 390
-3. Selected features: 149
-4. Selected features names:
-  ['mean_ch1', 'mean_ch2', 'mean_ch4']
-  ['mean_ch5', 'mean_ch8', 'mean_ch14']
-  ['mean_ch15', 'std_ch1', 'std_ch6']
-  ['std_ch7', 'skewness_ch2', 'skewness_ch3']
-  ['skewness_ch7', 'skewness_ch10', 'skewness_ch12']
-  ['time_corr_coef3', 'time_corr_coef5', 'time_corr_coef6']
-  ['time_corr_coef7', 'time_corr_coef8', 'time_corr_coef11']
-  ['time_corr_coef12', 'time_corr_coef17', 'time_corr_coef21']
-  ['time_corr_coef22', 'time_corr_coef23', 'time_corr_coef26']
-  ['time_corr_coef27', 'time_corr_coef28', 'time_corr_coef29']
-  ['time_corr_coef32', 'time_corr_coef33', 'time_corr_coef34']
-  ['time_corr_coef35', 'time_corr_coef36', 'time_corr_coef37']
-  ['time_corr_coef41', 'time_corr_coef46', 'time_corr_coef47']
-  ['time_corr_coef49', 'time_corr_coef51', 'time_corr_coef52']
-  ['time_corr_coef53', 'time_corr_coef54', 'time_corr_coef60']
-  ['time_corr_coef64', 'time_corr_coef65', 'time_corr_coef66']
-  ['time_corr_coef67', 'time_corr_coef68', 'time_corr_coef69']
-  ['time_corr_coef72', 'time_corr_coef73', 'time_corr_coef74']
-  ['time_corr_coef75', 'time_corr_coef77', 'time_corr_coef79']
-  ['time_corr_coef80', 'time_corr_coef83', 'time_corr_coef84']
-  ['time_corr_coef85', 'time_corr_coef86', 'time_corr_coef87']
-  ['time_corr_coef89', 'time_corr_coef92', 'time_corr_coef93']
-  ['time_corr_coef94', 'time_corr_coef97', 'time_corr_coef98']
-  ['time_corr_coef101', 'time_corr_coef103', 'time_corr_coef104']
-  ['time_corr_coef105', 'time_corr_eig1', 'time_corr_eig4']
-  ['time_corr_eig7', 'time_corr_eig14', 'power_band1_ch7']
-  ['freq_corr_coef1', 'freq_corr_coef4', 'freq_corr_coef5']
-  ['freq_corr_coef7', 'freq_corr_coef8', 'freq_corr_coef9']
-  ['freq_corr_coef10', 'freq_corr_coef11', 'freq_corr_coef12']
-  ['freq_corr_coef15', 'freq_corr_coef16', 'freq_corr_coef17']
-  ['freq_corr_coef18', 'freq_corr_coef20', 'freq_corr_coef22']
-  ['freq_corr_coef23', 'freq_corr_coef24', 'freq_corr_coef26']
-  ['freq_corr_coef27', 'freq_corr_coef28', 'freq_corr_coef29']
-  ['freq_corr_coef30', 'freq_corr_coef32', 'freq_corr_coef34']
-  ['freq_corr_coef36', 'freq_corr_coef37', 'freq_corr_coef39']
-  ['freq_corr_coef40', 'freq_corr_coef41', 'freq_corr_coef43']
-  ['freq_corr_coef46', 'freq_corr_coef48', 'freq_corr_coef49']
-  ['freq_corr_coef50', 'freq_corr_coef51', 'freq_corr_coef54']
-  ['freq_corr_coef55', 'freq_corr_coef57', 'freq_corr_coef58']
-  ['freq_corr_coef61', 'freq_corr_coef63', 'freq_corr_coef66']
-  ['freq_corr_coef68', 'freq_corr_coef70', 'freq_corr_coef73']
-  ['freq_corr_coef74', 'freq_corr_coef75', 'freq_corr_coef78']
-  ['freq_corr_coef79', 'freq_corr_coef81', 'freq_corr_coef83']
-  ['freq_corr_coef84', 'freq_corr_coef86', 'freq_corr_coef89']
-  ['freq_corr_coef92', 'freq_corr_coef93', 'freq_corr_coef94']
-  ['freq_corr_coef95', 'freq_corr_coef96', 'freq_corr_coef97']
-  ['freq_corr_coef98', 'freq_corr_coef103', 'freq_corr_coef104']
-  ['freq_corr_coef105', 'freq_corr_eig2', 'freq_corr_eig4']
-  ['freq_corr_eig8', 'freq_corr_eig9', 'freq_corr_eig10']
-  ['freq_corr_eig11', 'freq_corr_eig12']
-5. Classes distribution before balancing:
+3. Classes distribution before balancing:
   Counter(0: 1000, 1: 360)
-6. Classes distribution after balancing:
-  Counter({0: 1000, 1: 1000})
+4. Classes distribution after balancing:
+  Counter(0: 360, 1: 360)
+5. Selected features: 98
+6. Selected features names:
+  ['mean_ch7', 'mean_ch14', 'mean_ch15']
+  ['std_ch3', 'std_ch6', 'kurtosis_ch4']
+  ['kurtosis_ch8', 'kurtosis_ch9', 'kurtosis_ch14']
+  ['skewness_ch2', 'skewness_ch3', 'skewness_ch6']
+  ['skewness_ch7', 'skewness_ch9', 'skewness_ch10']
+  ['skewness_ch11', 'skewness_ch12', 'skewness_ch14']
+  ['time_corr_coef8', 'time_corr_coef12', 'time_corr_coef17']
+  ['time_corr_coef21', 'time_corr_coef26', 'time_corr_coef28']
+  ['time_corr_coef33', 'time_corr_coef35', 'time_corr_coef38']
+  ['time_corr_coef42', 'time_corr_coef49', 'time_corr_coef52']
+  ['time_corr_coef54', 'time_corr_coef60', 'time_corr_coef64']
+  ['time_corr_coef65', 'time_corr_coef66', 'time_corr_coef67']
+  ['time_corr_coef68', 'time_corr_coef75', 'time_corr_coef78']
+  ['time_corr_coef85', 'time_corr_coef86', 'time_corr_coef87']
+  ['time_corr_coef92', 'time_corr_coef94', 'time_corr_coef100']
+  ['time_corr_coef101', 'time_corr_eig1', 'time_corr_eig3']
+  ['time_corr_eig4', 'power_band1_ch1', 'freq_corr_coef1']
+  ['freq_corr_coef8', 'freq_corr_coef11', 'freq_corr_coef15']
+  ['freq_corr_coef16', 'freq_corr_coef17', 'freq_corr_coef23']
+  ['freq_corr_coef24', 'freq_corr_coef29', 'freq_corr_coef30']
+  ['freq_corr_coef31', 'freq_corr_coef32', 'freq_corr_coef36']
+  ['freq_corr_coef38', 'freq_corr_coef39', 'freq_corr_coef40']
+  ['freq_corr_coef41', 'freq_corr_coef42', 'freq_corr_coef43']
+  ['freq_corr_coef46', 'freq_corr_coef49', 'freq_corr_coef50']
+  ['freq_corr_coef51', 'freq_corr_coef58', 'freq_corr_coef63']
+  ['freq_corr_coef66', 'freq_corr_coef70', 'freq_corr_coef71']
+  ['freq_corr_coef73', 'freq_corr_coef75', 'freq_corr_coef80']
+  ['freq_corr_coef81', 'freq_corr_coef84', 'freq_corr_coef86']
+  ['freq_corr_coef87', 'freq_corr_coef89', 'freq_corr_coef93']
+  ['freq_corr_coef94', 'freq_corr_coef97', 'freq_corr_coef98']
+  ['freq_corr_coef103', 'freq_corr_coef104', 'freq_corr_coef105']
+  ['freq_corr_eig2', 'freq_corr_eig4', 'freq_corr_eig9']
+  ['freq_corr_eig10', 'freq_corr_eig12']
 7. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.984375, 0.984545347973897, 0.984375, 0.9843736265882744]
-  [1, 0.96875, 0.96875, 0.96875, 0.96875]
-  [2, 0.98125, 0.9812883315754521, 0.9812883315754521, 0.98125]
-  [3, 0.99375, 0.9937888198757764, 0.9937888198757764, 0.99375]
-  [4, 0.98125, 0.9814778633113204, 0.9813273956013907, 0.9812492675495137]
+  [0, 0.9568965517241379, 0.9577380952380952, 0.9573297650906928, 0.956893348197696]
+  [1, 0.9652173913043478, 0.9661505768063146, 0.9647397094430993, 0.9651515151515151]
+  [2, 0.9217391304347826, 0.9233110164333536, 0.9210048426150121, 0.9215255136856472]
+  [3, 0.9739130434782609, 0.9739866908650938, 0.9739866908650938, 0.9739130434782608]
+  [4, 0.9565217391304348, 0.9596774193548387, 0.9568965517241379, 0.956469074116133]
 8. Evaluation Metrics:
-  Accuracy: 0.9875
-  Precision: 0.987545018007203
-  Recall: 0.9874596784276461
-  F1-score: 0.9874961707022776
-  AUROC: 0.9987997299392363
-  RMSE: 0.11180339887498948
+  Accuracy: 0.9513888888888888
+  Precision: 0.9516317016317016
+  Recall: 0.9506687342508238
+  F1-score: 0.9511035653650255
+  AUROC: 0.9932157394843961
+  RMSE: 0.22047927592204922
 9. Confusion Matrix
-  [0.98477157 0.01522843],[0.00985222 0.99014778]
+  [0.96103896 0.03896104],[0.05970149 0.94029851]
+
+
+------------------------------------------------------------------------
+Patient_2
+1. 30-seconds eeg segments: 1200
+2. Extracted features: 840
+3. Classes distribution before balancing:
+  Counter(0: 840, 1: 360)
+4. Classes distribution after balancing:
+  Counter(0: 360, 1: 360)
+5. Selected features: 110
+6. Selected features names:
+  ['mean_ch17', 'std_ch9', 'skewness_ch19']
+  ['skewness_ch24', 'time_corr_coef1', 'time_corr_coef13']
+  ['time_corr_coef21', 'time_corr_coef32', 'time_corr_coef39']
+  ['time_corr_coef46', 'time_corr_coef49', 'time_corr_coef54']
+  ['time_corr_coef55', 'time_corr_coef59', 'time_corr_coef60']
+  ['time_corr_coef68', 'time_corr_coef69', 'time_corr_coef75']
+  ['time_corr_coef87', 'time_corr_coef98', 'time_corr_coef100']
+  ['time_corr_coef106', 'time_corr_coef112', 'time_corr_coef123']
+  ['time_corr_coef124', 'time_corr_coef132', 'time_corr_coef157']
+  ['time_corr_coef163', 'time_corr_coef177', 'time_corr_coef178']
+  ['time_corr_coef186', 'time_corr_coef195', 'time_corr_coef199']
+  ['time_corr_coef203', 'time_corr_coef207', 'time_corr_coef211']
+  ['time_corr_coef217', 'time_corr_coef219', 'time_corr_coef229']
+  ['time_corr_coef230', 'time_corr_coef240', 'time_corr_coef247']
+  ['time_corr_coef249', 'time_corr_coef262', 'time_corr_coef263']
+  ['time_corr_coef267', 'time_corr_coef270', 'time_corr_coef271']
+  ['time_corr_coef274', 'time_corr_eig1', 'time_corr_eig3']
+  ['time_corr_eig15', 'time_corr_eig20', 'power_band1_ch2']
+  ['power_band1_ch9', 'power_band1_ch20', 'power_band2_ch1']
+  ['power_band2_ch2', 'power_band2_ch3', 'power_band2_ch4']
+  ['power_band2_ch13', 'power_band2_ch14', 'power_band2_ch20']
+  ['power_band3_ch5', 'power_band3_ch15', 'power_band5_ch1']
+  ['power_band5_ch4', 'power_band6_ch1', 'freq_corr_coef1']
+  ['freq_corr_coef2', 'freq_corr_coef5', 'freq_corr_coef9']
+  ['freq_corr_coef10', 'freq_corr_coef23', 'freq_corr_coef24']
+  ['freq_corr_coef41', 'freq_corr_coef42', 'freq_corr_coef45']
+  ['freq_corr_coef60', 'freq_corr_coef61', 'freq_corr_coef67']
+  ['freq_corr_coef69', 'freq_corr_coef94', 'freq_corr_coef97']
+  ['freq_corr_coef128', 'freq_corr_coef148', 'freq_corr_coef149']
+  ['freq_corr_coef159', 'freq_corr_coef166', 'freq_corr_coef168']
+  ['freq_corr_coef178', 'freq_corr_coef182', 'freq_corr_coef195']
+  ['freq_corr_coef211', 'freq_corr_coef223', 'freq_corr_coef229']
+  ['freq_corr_coef237', 'freq_corr_coef241', 'freq_corr_coef249']
+  ['freq_corr_coef255', 'freq_corr_coef258', 'freq_corr_coef267']
+  ['freq_corr_coef274', 'freq_corr_coef275', 'freq_corr_coef276']
+  ['freq_corr_eig1', 'freq_corr_eig2', 'freq_corr_eig3']
+  ['freq_corr_eig8', 'freq_corr_eig12']
+7. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.9482758620689655, 0.9488095238095238, 0.9482758620689655, 0.9482604817127566]
+  [1, 0.9826086956521739, 0.9826073805202662, 0.9826073805202662, 0.9826073805202662]
+  [2, 0.9565217391304348, 0.9567191283292978, 0.956442831215971, 0.9565085848271688]
+  [3, 0.9478260869565217, 0.9497571341833637, 0.9481246218995765, 0.9477905569007263]
+  [4, 0.9391304347826087, 0.9421789409616554, 0.9395039322444041, 0.9390567037625861]
+8. Evaluation Metrics:
+  Accuracy: 0.9652777777777778
+  Precision: 0.9665632874588098
+  Recall: 0.9646718146718147
+  F1-score: 0.9651955334267898
+  AUROC: 0.9961389961389961
+  RMSE: 0.18633899812498247
+9. Confusion Matrix
+  [0.94285714 0.05714286],[0.01351351 0.98648649]
 
 
