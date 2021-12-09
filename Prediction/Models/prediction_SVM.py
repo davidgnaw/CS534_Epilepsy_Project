@@ -20,26 +20,11 @@ from sklearn.feature_selection import SelectFromModel
 from sklearn.preprocessing import StandardScaler
 import warnings
 
-# Ignore warnings
-warnings.filterwarnings("ignore")
 
-# Initialize list to print
-toprint = []
-toprint.append("SVM Prediction Summary")
-toprint.append("\n")
-
-# Define parent directory
-parent_Dir = Path("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Prediction/Extracted_Features")
-files = list(parent_Dir.glob('*.csv'))
-
-# Loop through subjects
-for filename in files:
-
-    # Define subject name
-    subject = str(filename).split("\\")[-1].split(".")[0]
+def import_features(file_name, print_list):
 
     # Load the extracted features
-    data = pd.read_csv(filename)
+    data = pd.read_csv(file_name)
     data = shuffle(data)
     data = data.reset_index(drop=True)
     X = data.drop(data.iloc[:, [-1]], axis=1) # Discard the class
@@ -48,10 +33,81 @@ for filename in files:
     feature_names = data.columns[:-1]
 
     # Print
-    toprint.append("------------------------------------------------------------------------")
-    toprint.append(subject)
-    toprint.append("1. 30-seconds eeg segments: {}".format(X.shape[0]))
-    toprint.append("2. Extracted features: {}".format(X.shape[1]))
+    print_list.append("------------------------------------------------------------------------")
+    print_list.append(subject)
+    print_list.append("1. 30-seconds eeg segments: {}".format(X.shape[0]))
+    print_list.append("2. Extracted features: {}".format(X.shape[1]))
+
+    return X, y, feature_names, print_list
+
+
+def balance_classes(X, y, print_list, method):
+
+    # To oversample
+    if method == "oversample":
+        ros = RandomOverSampler(random_state=42)
+        X_bal, y_bal = ros.fit_resample(X, np.array(y))
+
+    # To undersample
+    elif method == "undersample":
+        # In case class 0 is greater than class 1
+        if y.value_counts()[0] > y.value_counts()[1]:
+            X_bal = np.zeros((y.value_counts()[1]*2, X.shape[1]))
+            y_bal = np.zeros((y.value_counts()[1]*2, 1))
+            index = 0
+            counter = 0
+            for i in range(len(np.array(y))):
+                if np.array(y)[i] == 0:
+                    if counter < y.value_counts()[1]:
+                        X_bal[index,:] = X[i,:]
+                        y_bal[index] = np.array(y)[i]
+                        index += 1
+                        counter += 1
+                else:
+                    X_bal[index, :] = X[i, :]
+                    y_bal[index] = np.array(y)[i]
+                    index += 1
+
+        # In case class 1 is greater than class 0
+        else:
+            X_bal = np.zeros((y.value_counts()[0]*2, X.shape[1]))
+            y_bal = np.zeros((y.value_counts()[0]*2, 1))
+            index = 0
+            counter = 0
+            for i in range(len(np.array(y))):
+                if np.array(y)[i] == 1:
+                    if counter < y.value_counts()[0]:
+                        X_bal[index, :] = X[i, :]
+                        y_bal[index] = np.array(y)[i]
+                        index += 1
+                        counter += 1
+                else:
+                    X_bal[index, :] = X[i, :]
+                    y_bal[index] = np.array(y)[i]
+                    index += 1
+
+        # Shuffle again
+        data_bal = np.concatenate((X_bal, y_bal), axis=1)
+        df_data_bal = pd.DataFrame(data_bal)
+        data_bal = shuffle(df_data_bal)
+        data_bal = data_bal.reset_index(drop=True)
+        X_bal = data_bal.drop(data_bal.iloc[:, [-1]], axis=1)  # Discard the class
+        X_bal = StandardScaler().fit_transform(X_bal)  # Data Standardization
+        y_bal = np.array(data_bal.iloc[:, [-1]])
+
+    else:
+        print("Error")
+
+    # Print
+    print_list.append("3. Classes distribution before balancing:")
+    print_list.append("  Counter(0: {}, 1: {})".format(y.value_counts()[0], y.value_counts()[1]))
+    print_list.append("4. Classes distribution after balancing:")
+    print_list.append("  Counter(0: {}, 1: {})".format(np.sum(y_bal == 0), np.sum(y_bal == 1)))
+
+    return X_bal, y_bal, print_list
+
+
+def select_features(X, y, print_list):
 
     # Select best regularization parameter
     est = LinearSVC(penalty="l1", dual=False)
@@ -65,29 +121,23 @@ for filename in files:
     X_reduced = model.transform(X)
 
     # Print
-    toprint.append("3. Selected features: {}".format(X_reduced.shape[1]))
-    toprint.append("4. Selected features names:")
+    print_list.append("5. Selected features: {}".format(X_reduced.shape[1]))
+    print_list.append("6. Selected features names:")
     for idx in range(math.ceil(X_reduced.shape[1]/3)):
-        toprint.append("  {}".format(list(feature_names[model.get_support()])[idx*3:idx*3+3]))
+        print_list.append("  {}".format(list(feature_names[model.get_support()])[idx*3:idx*3+3]))
 
-    # Balance classes
-    ros = RandomOverSampler(random_state=42)
-    X_bal, y_bal = ros.fit_resample(X_reduced, np.array(y))
-    X_bal = StandardScaler().fit_transform(X_bal)
+    return X_reduced, print_list
 
-    # X_bal = X_reduced
-    # y_bal = np.array(y)
 
-    # Print
-    toprint.append("5. Classes distribution before balancing:")
-    toprint.append("  Counter(0: {}, 1: {})".format(y.value_counts()[0], y.value_counts()[1]))
-    toprint.append("6. Classes distribution after balancing:")
-    toprint.append("  {}".format(Counter(y_bal)))
+def split_dataset(X, y):
 
     # Split data
-    X_train, X_test, y_train, y_test = train_test_split(X_bal, y_bal, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    return X_train, X_test, y_train, y_test
 
-    # Evaluate model CV
+
+def cross_validation(X_train, y_train, print_list, subject):
+
     # Run classifier with cross-validation and plot ROC curves
     cv = StratifiedKFold(n_splits=5)
     classifier = svm.SVC(kernel="linear", probability=True, random_state=42)
@@ -154,7 +204,7 @@ for filename in files:
     ax.set(
         xlim=[-0.05, 1.05],
         ylim=[-0.05, 1.05],
-        title="ROC curve",
+        title="ROC Curve",
     )
     ax.legend(loc="lower right")
 
@@ -163,12 +213,16 @@ for filename in files:
     plt.savefig(fig_dir)
     # plt.show()
 
-    toprint.append("7. Evaluation metrics CV:")
-    toprint.append("  {}".format(["Fold", "Accuracy", "Precision", "Recall", "F1-Score"]))
+    print_list.append("7. Evaluation metrics CV:")
+    print_list.append("  {}".format(["Fold", "Accuracy", "Precision", "Recall", "F1-Score"]))
     for elem in fold_metrics:
-        toprint.append("  {}".format(elem))
+        print_list.append("  {}".format(elem))
 
-    # Evaluate model no CV
+    return print_list
+
+
+def evaluate_model(X_train, X_test, y_train, y_test, print_list, subject):
+
     # Train SVM
     svm_model = svm.SVC(kernel="linear", probability=True, random_state=42)
     svm_model.fit(X_train, y_train)
@@ -185,34 +239,76 @@ for filename in files:
     RMSE = metrics.mean_squared_error(y_test, y_hat, squared=False)
 
     # Print
-    toprint.append("8. Evaluation Metrics:")
-    toprint.append("  Accuracy: {}".format(acc))
-    toprint.append("  Precision: {}".format(precision))
-    toprint.append("  Recall: {}".format(recall))
-    toprint.append("  F1-score: {}".format(f1))
-    toprint.append("  AUROC: {}".format(auroc))
-    toprint.append("  RMSE: {}".format(RMSE))
+    print_list.append("8. Evaluation Metrics:")
+    print_list.append("  Accuracy: {}".format(acc))
+    print_list.append("  Precision: {}".format(precision))
+    print_list.append("  Recall: {}".format(recall))
+    print_list.append("  F1-score: {}".format(f1))
+    print_list.append("  AUROC: {}".format(auroc))
+    print_list.append("  RMSE: {}".format(RMSE))
 
     # Confusion matrix
     conf_mat = confusion_matrix(y_test, y_hat, normalize='true')
 
     # Print
-    toprint.append("9. Confusion Matrix")
-    toprint.append("  {},{}".format(conf_mat[0],conf_mat[1]))
+    print_list.append("9. Confusion Matrix")
+    print_list.append("  {},{}".format(conf_mat[0],conf_mat[1]))
 
     # Plot confusion Matrix
-    plot_confusion_matrix(svm_model, X_test, y_test, display_labels=("Interictal", "Preictal"), cmap=plt.cm.Blues, normalize="true")
+    plot_confusion_matrix(svm_model, X_test, y_test, display_labels=("Interictal", "Ictal"), cmap=plt.cm.Blues, normalize="true")
 
     # Save Confusion Matrix
     fig_dir = os.path.join("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Prediction/Figures_SVM", "CM_"+subject+".png")
     plt.savefig(fig_dir)
     # plt.show()
 
+    print_list.append("\n")
+
+    return print_list
+
+
+if __name__ == '__main__':
+
+    # Ignore warnings
+    warnings.filterwarnings("ignore")
+
+    # Initialize list to print
+    toprint = []
+    toprint.append("SVM Prediction Summary")
     toprint.append("\n")
 
-# Write file
-textfile = open(r"F:\Users\user\Desktop\EMORY\Classes\Fall_2021\CS_534\Project\Prediction\Results_SVM.txt", "w")
-for elem in toprint:
-    print(elem)
-    textfile.write(str(elem) + "\n")
-textfile.close()
+    # Define parent directory
+    parent_Dir = Path("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Prediction/Extracted_Features")
+    files = list(parent_Dir.glob('*.csv'))
+
+    # Loop through subjects
+    for filename in files:
+        # Define subject name
+        subject = str(filename).split("\\")[-1].split(".")[0]
+
+        # Import extracted features
+        X, y, feature_names, toprint = import_features(filename, toprint)
+
+        # Balance classes
+        X_bal, y_bal, toprint = balance_classes(X, y, toprint, 'undersample')
+
+        # Select features
+        X_reduced, toprint = select_features(X_bal, y_bal, toprint)
+
+        # Obtain training and testing set
+        X_train, X_test, y_train, y_test = split_dataset(X_reduced, y_bal)
+
+        # Cross-validation 5-folds
+        toprint = cross_validation(X_train, y_train, toprint, subject)
+
+        # Evaluation metrics and confusion matrix
+        toprint = evaluate_model(X_train, X_test, y_train, y_test, toprint, subject)
+
+
+    # Write file
+    textfile = open(r"F:\Users\user\Desktop\EMORY\Classes\Fall_2021\CS_534\Project\Prediction\Results_SVM.txt", "w")
+    for elem in toprint:
+        print(elem)
+        textfile.write(str(elem) + "\n")
+    textfile.close()
+
