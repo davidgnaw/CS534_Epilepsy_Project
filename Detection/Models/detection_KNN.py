@@ -108,28 +108,6 @@ def balance_classes(X, y, print_list, method):
     return X_bal, y_bal, print_list
 
 
-def select_features(X, y, print_list):
-
-    # Select best regularization parameter
-    est = LinearSVC(penalty="l1", dual=False)
-    c_grid = {'C': np.logspace(-3, 1, num=30)}
-    clf = GridSearchCV(estimator=est, param_grid=c_grid).fit(X, np.array(y))
-    reg_param = clf.best_params_['C']
-
-    # Feature selection
-    lsvc = LinearSVC(C=reg_param, penalty="l1", dual=False).fit(X, np.array(y))
-    model = SelectFromModel(lsvc, prefit=True)
-    X_reduced = model.transform(X)
-
-    # Print
-    print_list.append("5. Selected features: {}".format(X_reduced.shape[1]))
-    print_list.append("6. Selected features names:")
-    for idx in range(math.ceil(X_reduced.shape[1]/3)):
-        print_list.append("  {}".format(list(feature_names[model.get_support()])[idx*3:idx*3+3]))
-
-    return X_reduced, print_list
-
-
 def split_dataset(X, y):
 
     # Split data
@@ -149,11 +127,25 @@ def cross_validation(X_train, y_train, print_list, subject):
     mean_fpr = np.linspace(0, 1, 100)
 
     fig, ax = plt.subplots()
+
     for i, (train, test) in enumerate(cv.split(X_train, y_train)):
-        classifier.fit(X_train[train], y_train[train])
+
+        # Select best regularization parameter
+        est = LinearSVC(penalty="l1", dual=False)
+        c_grid = {'C': np.logspace(-3, 1, num=30)}
+        clf = GridSearchCV(estimator=est, param_grid=c_grid).fit(X_train[train], y_train[train])
+        reg_param = clf.best_params_['C']
+
+        # Feature selection
+        lsvc = LinearSVC(C=reg_param, penalty="l1", dual=False).fit(X_train[train], y_train[train])
+        model = SelectFromModel(lsvc, prefit=True)
+        X_reduced = model.transform(X_train[train])
+
+        # Train classifier
+        classifier.fit(X_reduced, y_train[train])
         viz = RocCurveDisplay.from_estimator(
             classifier,
-            X_train[test],
+            X_train[test][:,model.get_support()],
             y_train[test],
             name="ROC fold {}".format(i),
             alpha=0.3,
@@ -166,7 +158,7 @@ def cross_validation(X_train, y_train, print_list, subject):
         aucs.append(viz.roc_auc)
 
         # Evaluation metrics per fold
-        y_hat_fold = classifier.predict(X_train[test])
+        y_hat_fold = classifier.predict(X_train[test][:,model.get_support()])
 
         acc = metrics.accuracy_score(y_train[test], y_hat_fold)
         f1 = metrics.f1_score(y_train[test], y_hat_fold, average='macro')
@@ -214,7 +206,7 @@ def cross_validation(X_train, y_train, print_list, subject):
     plt.savefig(fig_dir)
     # plt.show()
 
-    print_list.append("7. Evaluation metrics CV:")
+    print_list.append("5. Evaluation metrics CV:")
     print_list.append("  {}".format(["Fold", "Accuracy", "Precision", "Recall", "F1-Score"]))
     for elem in fold_metrics:
         print_list.append("  {}".format(elem))
@@ -224,19 +216,36 @@ def cross_validation(X_train, y_train, print_list, subject):
 
 def evaluate_model(X_train, X_test, y_train, y_test, print_list, subject):
 
+    # Select best regularization parameter
+    est = LinearSVC(penalty="l1", dual=False)
+    c_grid = {'C': np.logspace(-3, 1, num=30)}
+    clf = GridSearchCV(estimator=est, param_grid=c_grid).fit(X_train, y_train)
+    reg_param = clf.best_params_['C']
+
+    # Feature selection
+    lsvc = LinearSVC(C=reg_param, penalty="l1", dual=False).fit(X_train, y_train)
+    model = SelectFromModel(lsvc, prefit=True)
+    X_reduced = model.transform(X_train)
+
+    # Print
+    print_list.append("6. Selected features: {}".format(X_reduced.shape[1]))
+    print_list.append("7. Selected features names:")
+    for idx in range(math.ceil(X_reduced.shape[1] / 3)):
+        print_list.append("  {}".format(list(feature_names[model.get_support()])[idx * 3:idx * 3 + 3]))
+
     # Train SVM
     knn_model = KNeighborsClassifier()
-    knn_model.fit(X_train, y_train)
+    knn_model.fit(X_reduced, y_train)
 
     # Obtain predictions
-    y_hat = knn_model.predict(X_test)
+    y_hat = knn_model.predict(X_test[:,model.get_support()])
 
     # Metrics
     acc = metrics.accuracy_score(y_test, y_hat)
     f1 = metrics.f1_score(y_test, y_hat, average='macro')
     precision = metrics.precision_score(y_test, y_hat, average='macro')
     recall = metrics.recall_score(y_test, y_hat, average='macro')
-    auroc = metrics.roc_auc_score(y_test, knn_model.predict_proba(X_test)[:,1], average='macro')
+    auroc = metrics.roc_auc_score(y_test, knn_model.predict_proba(X_test[:,model.get_support()])[:,1], average='macro')
     RMSE = metrics.mean_squared_error(y_test, y_hat, squared=False)
 
     # Print
@@ -256,7 +265,8 @@ def evaluate_model(X_train, X_test, y_train, y_test, print_list, subject):
     print_list.append("  {},{}".format(conf_mat[0],conf_mat[1]))
 
     # Plot confusion Matrix
-    plot_confusion_matrix(knn_model, X_test, y_test, display_labels=("Interictal", "Ictal"), cmap=plt.cm.Blues, normalize="true")
+    plot_confusion_matrix(knn_model, X_test[:,model.get_support()], y_test, display_labels=("Interictal", "Ictal"),
+                          cmap=plt.cm.Blues, normalize="true")
 
     # Save Confusion Matrix
     fig_dir = os.path.join("F:/Users/user/Desktop/EMORY/Classes/Fall_2021/CS_534/Project/Detection/Figures_KNN", "CM_"+subject+".png")
@@ -293,11 +303,8 @@ if __name__ == '__main__':
         # Balance classes
         X_bal, y_bal, toprint = balance_classes(X, y, toprint, 'undersample')
 
-        # Select features
-        X_reduced, toprint = select_features(X_bal, y_bal, toprint)
-
         # Obtain training and testing set
-        X_train, X_test, y_train, y_test = split_dataset(X_reduced, y_bal)
+        X_train, X_test, y_train, y_test = split_dataset(X_bal, y_bal)
 
         # Cross-validation 5-folds
         toprint = cross_validation(X_train, y_train, toprint, subject)
