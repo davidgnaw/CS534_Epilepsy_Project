@@ -12,30 +12,31 @@ Dog_1
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
   [0, 0.9649122807017544, 0.9649014778325123, 0.9649014778325123, 0.9649014778325123]
-  [1, 1.0, 1.0, 1.0, 1.0]
-  [2, 0.9649122807017544, 0.9666666666666667, 0.9655172413793103, 0.9649014778325123]
-  [3, 1.0, 1.0, 1.0, 1.0]
-  [4, 0.9642857142857143, 0.9666666666666667, 0.9642857142857143, 0.9642401021711366]
-6. Selected features: 25
+  [1, 0.9649122807017544, 0.967741935483871, 0.9642857142857143, 0.9648148148148148]
+  [2, 1.0, 1.0, 1.0, 1.0]
+  [3, 0.9824561403508771, 0.9833333333333334, 0.9821428571428572, 0.9824345146379044]
+  [4, 0.9642857142857143, 0.9642857142857143, 0.9642857142857143, 0.9642857142857143]
+6. Selected features: 28
 7. Selected features names:
-  ['mean_ch14', 'time_corr_coef14', 'time_corr_coef16']
-  ['time_corr_coef20', 'time_corr_coef23', 'time_corr_coef44']
-  ['time_corr_coef55', 'time_corr_coef59', 'time_corr_coef62']
-  ['time_corr_coef69', 'time_corr_coef96', 'time_corr_coef97']
-  ['time_corr_coef115', 'power_band2_ch10', 'power_band2_ch11']
-  ['power_band6_ch1', 'power_band6_ch3', 'power_band6_ch4']
-  ['power_band6_ch12', 'power_band6_ch13', 'freq_corr_coef34']
-  ['freq_corr_coef52', 'freq_corr_coef76', 'freq_corr_coef102']
+  ['mean_ch7', 'mean_ch14', 'skewness_ch16']
+  ['time_corr_coef1', 'time_corr_coef14', 'time_corr_coef23']
+  ['time_corr_coef27', 'time_corr_coef43', 'time_corr_coef45']
+  ['time_corr_coef55', 'time_corr_coef73', 'time_corr_coef78']
+  ['time_corr_coef97', 'time_corr_coef98', 'time_corr_coef103']
+  ['time_corr_coef114', 'time_corr_coef115', 'time_corr_coef120']
+  ['power_band2_ch5', 'power_band2_ch11', 'power_band6_ch1']
+  ['power_band6_ch3', 'power_band6_ch4', 'power_band6_ch12']
+  ['freq_corr_coef18', 'freq_corr_coef76', 'freq_corr_coef102']
   ['freq_corr_coef115']
 8. Evaluation Metrics:
-  Accuracy: 0.9722222222222222
-  Precision: 0.9743589743589743
-  Recall: 0.9714285714285714
-  F1-score: 0.9721362229102167
-  AUROC: 0.984942084942085
-  RMSE: 0.16666666666666666
+  Accuracy: 0.9861111111111112
+  Precision: 0.9857142857142858
+  Recall: 0.986842105263158
+  F1-score: 0.986086956521739
+  AUROC: 1.0
+  RMSE: 0.11785113019775792
 9. Confusion Matrix
-  [1. 0.],[0.05714286 0.94285714]
+  [1. 0.],[0.02631579 0.97368421]
 
 
 ------------------------------------------------------------------------
@@ -48,34 +49,40 @@ Dog_2
   Counter(0: 172, 1: 172)
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.9090909090909091, 0.9242424242424243, 0.9074074074074074, 0.9079959852793575]
-  [1, 0.9272727272727272, 0.9375, 0.9259259259259259, 0.9266666666666667]
-  [2, 0.9818181818181818, 0.9827586206896552, 0.9814814814814814, 0.9817941079112876]
-  [3, 1.0, 1.0, 1.0, 1.0]
-  [4, 0.9818181818181818, 0.9821428571428572, 0.9821428571428572, 0.9818181818181818]
-6. Selected features: 34
+  [0, 0.9454545454545454, 0.9451058201058201, 0.9462864721485411, 0.945382323733863]
+  [1, 0.9636363636363636, 0.9642857142857143, 0.9655172413793103, 0.9636243386243386]
+  [2, 0.9636363636363636, 0.9642857142857143, 0.9655172413793103, 0.9636243386243386]
+  [3, 0.9636363636363636, 0.9655172413793103, 0.9642857142857143, 0.9636243386243386]
+  [4, 0.9454545454545454, 0.95, 0.9464285714285714, 0.945382323733863]
+6. Selected features: 52
 7. Selected features names:
-  ['std_ch7', 'kurtosis_ch8', 'kurtosis_ch10']
-  ['kurtosis_ch11', 'kurtosis_ch13', 'kurtosis_ch15']
-  ['skewness_ch2', 'skewness_ch16', 'time_corr_coef4']
-  ['time_corr_coef33', 'time_corr_coef46', 'time_corr_coef58']
-  ['time_corr_coef61', 'time_corr_coef69', 'time_corr_coef72']
-  ['time_corr_coef95', 'time_corr_coef105', 'time_corr_coef118']
-  ['time_corr_eig10', 'time_corr_eig11', 'time_corr_eig16']
-  ['power_band1_ch2', 'power_band2_ch7', 'power_band2_ch14']
-  ['power_band2_ch15', 'power_band3_ch7', 'power_band5_ch12']
-  ['power_band6_ch2', 'power_band6_ch8', 'power_band6_ch12']
-  ['freq_corr_coef11', 'freq_corr_coef15', 'freq_corr_coef120']
-  ['freq_corr_eig15']
+  ['mean_ch2', 'mean_ch9', 'kurtosis_ch2']
+  ['kurtosis_ch4', 'kurtosis_ch6', 'kurtosis_ch14']
+  ['skewness_ch2', 'skewness_ch8', 'time_corr_coef4']
+  ['time_corr_coef18', 'time_corr_coef20', 'time_corr_coef33']
+  ['time_corr_coef41', 'time_corr_coef48', 'time_corr_coef58']
+  ['time_corr_coef61', 'time_corr_coef72', 'time_corr_coef85']
+  ['time_corr_coef95', 'time_corr_coef96', 'time_corr_coef97']
+  ['time_corr_coef106', 'time_corr_coef115', 'time_corr_coef118']
+  ['time_corr_coef120', 'time_corr_eig7', 'time_corr_eig9']
+  ['time_corr_eig10', 'time_corr_eig16', 'power_band1_ch2']
+  ['power_band2_ch7', 'power_band2_ch13', 'power_band2_ch15']
+  ['power_band3_ch7', 'power_band5_ch4', 'power_band5_ch8']
+  ['power_band5_ch12', 'power_band6_ch12', 'freq_corr_coef5']
+  ['freq_corr_coef7', 'freq_corr_coef15', 'freq_corr_coef16']
+  ['freq_corr_coef19', 'freq_corr_coef32', 'freq_corr_coef47']
+  ['freq_corr_coef65', 'freq_corr_coef66', 'freq_corr_coef81']
+  ['freq_corr_coef87', 'freq_corr_coef93', 'freq_corr_coef119']
+  ['freq_corr_coef120']
 8. Evaluation Metrics:
-  Accuracy: 0.9855072463768116
-  Precision: 0.9852941176470589
-  Recall: 0.9861111111111112
-  F1-score: 0.9854950599117089
-  AUROC: 0.9856902356902357
-  RMSE: 0.1203858530857692
+  Accuracy: 0.9710144927536232
+  Precision: 0.9761904761904762
+  Recall: 0.9655172413793103
+  F1-score: 0.9699477351916377
+  AUROC: 0.9814655172413794
+  RMSE: 0.17025130615174972
 9. Confusion Matrix
-  [1. 0.],[0.02777778 0.97222222]
+  [1. 0.],[0.06896552 0.93103448]
 
 
 ------------------------------------------------------------------------
@@ -88,45 +95,42 @@ Dog_3
   Counter(0: 480, 1: 480)
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.9805194805194806, 0.9805194805194806, 0.9806005398110661, 0.9805186590765338]
-  [1, 0.961038961038961, 0.9622864874006426, 0.961038961038961, 0.9610126582278481]
-  [2, 0.987012987012987, 0.9873417721518987, 0.987012987012987, 0.9870107962213226]
-  [3, 0.954248366013072, 0.9542891319207109, 0.9542891319207109, 0.9542483660130718]
-  [4, 0.954248366013072, 0.9548409168662333, 0.9543745727956254, 0.9542405468916898]
-6. Selected features: 67
+  [0, 0.9545454545454546, 0.9588235294117646, 0.9539473684210527, 0.9543896763274804]
+  [1, 0.9545454545454546, 0.9556233062330624, 0.9540084388185655, 0.9544513457556936]
+  [2, 0.961038961038961, 0.9647058823529412, 0.96, 0.9608739837398375]
+  [3, 0.9803921568627451, 0.980585015395142, 0.9802564102564103, 0.9803787457786518]
+  [4, 0.9869281045751634, 0.986923076923077, 0.986923076923077, 0.986923076923077]
+6. Selected features: 58
 7. Selected features names:
-  ['mean_ch1', 'mean_ch15', 'kurtosis_ch1']
-  ['kurtosis_ch3', 'kurtosis_ch5', 'kurtosis_ch8']
-  ['kurtosis_ch12', 'skewness_ch6', 'skewness_ch7']
-  ['skewness_ch12', 'skewness_ch16', 'time_corr_coef1']
-  ['time_corr_coef5', 'time_corr_coef7', 'time_corr_coef11']
-  ['time_corr_coef16', 'time_corr_coef17', 'time_corr_coef18']
-  ['time_corr_coef20', 'time_corr_coef33', 'time_corr_coef35']
-  ['time_corr_coef58', 'time_corr_coef62', 'time_corr_coef68']
-  ['time_corr_coef72', 'time_corr_coef75', 'time_corr_coef76']
-  ['time_corr_coef87', 'time_corr_coef88', 'time_corr_coef96']
-  ['time_corr_coef102', 'time_corr_coef105', 'time_corr_coef108']
-  ['time_corr_coef115', 'time_corr_eig2', 'time_corr_eig4']
-  ['time_corr_eig5', 'time_corr_eig6', 'time_corr_eig9']
-  ['time_corr_eig12', 'power_band2_ch3', 'power_band2_ch13']
-  ['power_band2_ch14', 'power_band3_ch3', 'power_band3_ch13']
-  ['power_band4_ch5', 'power_band4_ch13', 'power_band5_ch4']
-  ['power_band6_ch12', 'freq_corr_coef5', 'freq_corr_coef19']
-  ['freq_corr_coef31', 'freq_corr_coef32', 'freq_corr_coef33']
-  ['freq_corr_coef43', 'freq_corr_coef51', 'freq_corr_coef54']
-  ['freq_corr_coef66', 'freq_corr_coef68', 'freq_corr_coef69']
-  ['freq_corr_coef87', 'freq_corr_coef94', 'freq_corr_coef97']
-  ['freq_corr_coef106', 'freq_corr_eig1', 'freq_corr_eig13']
-  ['freq_corr_eig14']
+  ['mean_ch7', 'std_ch13', 'kurtosis_ch3']
+  ['kurtosis_ch5', 'kurtosis_ch7', 'kurtosis_ch9']
+  ['kurtosis_ch11', 'kurtosis_ch12', 'kurtosis_ch13']
+  ['skewness_ch3', 'skewness_ch12', 'skewness_ch13']
+  ['time_corr_coef1', 'time_corr_coef7', 'time_corr_coef13']
+  ['time_corr_coef16', 'time_corr_coef18', 'time_corr_coef20']
+  ['time_corr_coef21', 'time_corr_coef33', 'time_corr_coef35']
+  ['time_corr_coef59', 'time_corr_coef75', 'time_corr_coef76']
+  ['time_corr_coef84', 'time_corr_coef88', 'time_corr_coef96']
+  ['time_corr_coef100', 'time_corr_coef105', 'time_corr_coef108']
+  ['time_corr_coef113', 'time_corr_coef115', 'time_corr_eig2']
+  ['time_corr_eig5', 'time_corr_eig6', 'power_band2_ch3']
+  ['power_band2_ch13', 'power_band2_ch15', 'power_band5_ch4']
+  ['power_band5_ch5', 'freq_corr_coef10', 'freq_corr_coef16']
+  ['freq_corr_coef20', 'freq_corr_coef22', 'freq_corr_coef23']
+  ['freq_corr_coef32', 'freq_corr_coef33', 'freq_corr_coef37']
+  ['freq_corr_coef52', 'freq_corr_coef53', 'freq_corr_coef54']
+  ['freq_corr_coef59', 'freq_corr_coef61', 'freq_corr_coef70']
+  ['freq_corr_coef94', 'freq_corr_coef107', 'freq_corr_coef114']
+  ['freq_corr_coef117']
 8. Evaluation Metrics:
-  Accuracy: 0.9791666666666666
-  Precision: 0.9803921568627452
-  Recall: 0.9787234042553192
-  F1-score: 0.9791304347826086
-  AUROC: 0.9995657837603126
-  RMSE: 0.14433756729740643
+  Accuracy: 0.953125
+  Precision: 0.9527400976668475
+  Recall: 0.9558566433566433
+  F1-score: 0.9530217763640814
+  AUROC: 0.9868334790209791
+  RMSE: 0.21650635094610965
 9. Confusion Matrix
-  [1. 0.],[0.04255319 0.95744681]
+  [0.98863636 0.01136364],[0.07692308 0.92307692]
 
 
 ------------------------------------------------------------------------
@@ -139,49 +143,53 @@ Dog_4
   Counter(0: 257, 1: 257)
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.9156626506024096, 0.9181286549707601, 0.9152148664343787, 0.9154663174741744]
-  [1, 0.8902439024390244, 0.9099999999999999, 0.8902439024390244, 0.8889056149330122]
-  [2, 0.9146341463414634, 0.9208937198067633, 0.9146341463414633, 0.9143155694879832]
-  [3, 0.8780487804878049, 0.9019607843137255, 0.8780487804878049, 0.876207729468599]
-  [4, 0.8048780487804879, 0.8596491228070176, 0.8048780487804879, 0.7971552257266543]
-6. Selected features: 80
+  [0, 0.9397590361445783, 0.9401162790697675, 0.9396051103368177, 0.9397240377632534]
+  [1, 0.8902439024390244, 0.9117647058823529, 0.8875, 0.8882326215356656]
+  [2, 0.8902439024390244, 0.9117647058823529, 0.8875, 0.8882326215356656]
+  [3, 0.8658536585365854, 0.8962264150943396, 0.8625, 0.8623951182303585]
+  [4, 0.8536585365853658, 0.8888888888888888, 0.85, 0.849264705882353]
+6. Selected features: 92
 7. Selected features names:
-  ['mean_ch4', 'kurtosis_ch7', 'kurtosis_ch13']
-  ['skewness_ch1', 'skewness_ch2', 'skewness_ch7']
-  ['skewness_ch9', 'skewness_ch16', 'time_corr_coef1']
+  ['mean_ch4', 'mean_ch8', 'mean_ch15']
+  ['kurtosis_ch1', 'kurtosis_ch9', 'kurtosis_ch14']
+  ['skewness_ch1', 'skewness_ch2', 'skewness_ch5']
+  ['skewness_ch6', 'skewness_ch9', 'skewness_ch12']
+  ['skewness_ch14', 'skewness_ch16', 'time_corr_coef1']
   ['time_corr_coef4', 'time_corr_coef8', 'time_corr_coef9']
-  ['time_corr_coef10', 'time_corr_coef11', 'time_corr_coef13']
-  ['time_corr_coef19', 'time_corr_coef21', 'time_corr_coef23']
-  ['time_corr_coef25', 'time_corr_coef28', 'time_corr_coef30']
-  ['time_corr_coef41', 'time_corr_coef44', 'time_corr_coef46']
-  ['time_corr_coef51', 'time_corr_coef54', 'time_corr_coef56']
-  ['time_corr_coef57', 'time_corr_coef58', 'time_corr_coef61']
-  ['time_corr_coef62', 'time_corr_coef63', 'time_corr_coef65']
-  ['time_corr_coef77', 'time_corr_coef79', 'time_corr_coef80']
-  ['time_corr_coef92', 'time_corr_coef93', 'time_corr_coef94']
-  ['time_corr_coef95', 'time_corr_coef96', 'time_corr_coef98']
-  ['time_corr_coef100', 'time_corr_coef101', 'time_corr_coef104']
-  ['time_corr_coef106', 'time_corr_coef107', 'time_corr_coef110']
-  ['time_corr_coef114', 'time_corr_coef118', 'time_corr_coef119']
-  ['time_corr_eig3', 'time_corr_eig7', 'power_band2_ch15']
-  ['power_band3_ch9', 'power_band3_ch15', 'power_band4_ch15']
-  ['power_band6_ch1', 'power_band6_ch6', 'power_band6_ch9']
-  ['power_band6_ch13', 'freq_corr_coef1', 'freq_corr_coef3']
-  ['freq_corr_coef20', 'freq_corr_coef22', 'freq_corr_coef29']
-  ['freq_corr_coef33', 'freq_corr_coef46', 'freq_corr_coef50']
-  ['freq_corr_coef66', 'freq_corr_coef85', 'freq_corr_coef88']
-  ['freq_corr_coef90', 'freq_corr_coef94', 'freq_corr_coef96']
-  ['freq_corr_coef97', 'freq_corr_coef106', 'freq_corr_coef114']
-  ['freq_corr_eig2', 'freq_corr_eig15']
+  ['time_corr_coef10', 'time_corr_coef18', 'time_corr_coef22']
+  ['time_corr_coef23', 'time_corr_coef25', 'time_corr_coef26']
+  ['time_corr_coef28', 'time_corr_coef30', 'time_corr_coef34']
+  ['time_corr_coef35', 'time_corr_coef36', 'time_corr_coef39']
+  ['time_corr_coef46', 'time_corr_coef48', 'time_corr_coef49']
+  ['time_corr_coef51', 'time_corr_coef53', 'time_corr_coef54']
+  ['time_corr_coef55', 'time_corr_coef57', 'time_corr_coef58']
+  ['time_corr_coef59', 'time_corr_coef62', 'time_corr_coef69']
+  ['time_corr_coef71', 'time_corr_coef76', 'time_corr_coef79']
+  ['time_corr_coef80', 'time_corr_coef83', 'time_corr_coef92']
+  ['time_corr_coef94', 'time_corr_coef96', 'time_corr_coef100']
+  ['time_corr_coef101', 'time_corr_coef105', 'time_corr_coef106']
+  ['time_corr_coef110', 'time_corr_coef111', 'time_corr_coef113']
+  ['time_corr_coef114', 'time_corr_coef117', 'time_corr_coef118']
+  ['time_corr_eig2', 'time_corr_eig8', 'time_corr_eig12']
+  ['time_corr_eig13', 'power_band1_ch1', 'power_band2_ch15']
+  ['power_band6_ch9', 'freq_corr_coef3', 'freq_corr_coef4']
+  ['freq_corr_coef8', 'freq_corr_coef17', 'freq_corr_coef30']
+  ['freq_corr_coef46', 'freq_corr_coef50', 'freq_corr_coef53']
+  ['freq_corr_coef56', 'freq_corr_coef69', 'freq_corr_coef70']
+  ['freq_corr_coef82', 'freq_corr_coef91', 'freq_corr_coef93']
+  ['freq_corr_coef94', 'freq_corr_coef96', 'freq_corr_coef97']
+  ['freq_corr_coef101', 'freq_corr_coef102', 'freq_corr_coef106']
+  ['freq_corr_coef110', 'freq_corr_eig4', 'freq_corr_eig5']
+  ['freq_corr_eig14', 'freq_corr_eig15']
 8. Evaluation Metrics:
-  Accuracy: 0.941747572815534
-  Precision: 0.9473684210526316
-  Recall: 0.9423076923076923
-  F1-score: 0.941609977324263
-  AUROC: 0.9866138763197587
-  RMSE: 0.2413553960127389
+  Accuracy: 0.8640776699029126
+  Precision: 0.8784668721109399
+  Recall: 0.873290273556231
+  F1-score: 0.8639622641509435
+  AUROC: 0.9849924012158054
+  RMSE: 0.3686764572048063
 9. Confusion Matrix
-  [1. 0.],[0.11538462 0.88461538]
+  [0.9787234 0.0212766],[0.23214286 0.76785714]
 
 
 ------------------------------------------------------------------------
@@ -194,34 +202,44 @@ Patient_1
   Counter(0: 70, 1: 70)
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.8260869565217391, 0.8666666666666667, 0.8333333333333333, 0.823076923076923]
-  [1, 0.9130434782608695, 0.9128787878787878, 0.9128787878787878, 0.9128787878787878]
-  [2, 0.8636363636363636, 0.8928571428571428, 0.8636363636363636, 0.8610526315789474]
-  [3, 0.9090909090909091, 0.9230769230769231, 0.9090909090909092, 0.9083333333333333]
-  [4, 0.8181818181818182, 0.8666666666666667, 0.8181818181818181, 0.811965811965812]
-6. Selected features: 34
+  [0, 0.9565217391304348, 0.9583333333333333, 0.9583333333333333, 0.9565217391304348]
+  [1, 0.8695652173913043, 0.8712121212121212, 0.8712121212121212, 0.8695652173913043]
+  [2, 0.8181818181818182, 0.8666666666666667, 0.8181818181818181, 0.811965811965812]
+  [3, 0.7272727272727273, 0.7589285714285714, 0.7416666666666667, 0.7250000000000001]
+  [4, 0.8181818181818182, 0.825, 0.825, 0.8181818181818182]
+6. Selected features: 66
 7. Selected features names:
-  ['std_ch13', 'skewness_ch13', 'skewness_ch20']
-  ['skewness_ch41', 'skewness_ch42', 'skewness_ch43']
-  ['skewness_ch47', 'skewness_ch53', 'time_corr_coef60']
-  ['time_corr_coef69', 'time_corr_coef208', 'time_corr_coef1061']
-  ['time_corr_coef1722', 'time_corr_coef1876', 'time_corr_coef1937']
-  ['time_corr_coef1958', 'time_corr_coef2126', 'time_corr_coef2252']
-  ['power_band2_ch17', 'power_band2_ch27', 'power_band2_ch34']
-  ['power_band2_ch36', 'power_band2_ch64', 'power_band3_ch21']
-  ['power_band4_ch47', 'power_band5_ch19', 'power_band6_ch19']
-  ['freq_corr_coef60', 'freq_corr_coef141', 'freq_corr_coef338']
-  ['freq_corr_coef624', 'freq_corr_coef1275', 'freq_corr_coef2108']
-  ['freq_corr_coef2132']
+  ['std_ch11', 'std_ch18', 'kurtosis_ch18']
+  ['kurtosis_ch47', 'kurtosis_ch54', 'skewness_ch11']
+  ['skewness_ch13', 'skewness_ch20', 'skewness_ch42']
+  ['skewness_ch43', 'skewness_ch53', 'time_corr_coef61']
+  ['time_corr_coef208', 'time_corr_coef438', 'time_corr_coef502']
+  ['time_corr_coef503', 'time_corr_coef526', 'time_corr_coef577']
+  ['time_corr_coef812', 'time_corr_coef1087', 'time_corr_coef1093']
+  ['time_corr_coef1308', 'time_corr_coef1347', 'time_corr_coef1427']
+  ['time_corr_coef1451', 'time_corr_coef1461', 'time_corr_coef1462']
+  ['time_corr_coef1546', 'time_corr_coef1677', 'time_corr_coef1751']
+  ['time_corr_coef1878', 'time_corr_coef1937', 'time_corr_coef1958']
+  ['time_corr_coef1984', 'time_corr_coef1985', 'time_corr_coef1986']
+  ['time_corr_coef2017', 'time_corr_coef2152', 'time_corr_coef2214']
+  ['power_band1_ch66', 'power_band2_ch34', 'power_band2_ch36']
+  ['power_band2_ch53', 'power_band2_ch55', 'power_band2_ch64']
+  ['power_band3_ch21', 'power_band3_ch39', 'power_band4_ch47']
+  ['power_band5_ch19', 'power_band6_ch19', 'freq_corr_coef54']
+  ['freq_corr_coef60', 'freq_corr_coef141', 'freq_corr_coef226']
+  ['freq_corr_coef255', 'freq_corr_coef390', 'freq_corr_coef623']
+  ['freq_corr_coef1187', 'freq_corr_coef1193', 'freq_corr_coef1275']
+  ['freq_corr_coef1474', 'freq_corr_coef1999', 'freq_corr_coef2004']
+  ['freq_corr_coef2149', 'freq_corr_coef2197', 'freq_corr_eig67']
 8. Evaluation Metrics:
-  Accuracy: 0.8214285714285714
-  Precision: 0.8388888888888889
-  Recall: 0.8128205128205128
-  F1-score: 0.8155467720685112
-  AUROC: 0.9692307692307693
-  RMSE: 0.4225771273642583
+  Accuracy: 0.9642857142857143
+  Precision: 0.9583333333333333
+  Recall: 0.9705882352941176
+  F1-score: 0.9631093544137023
+  AUROC: 0.9973262032085561
+  RMSE: 0.1889822365046136
 9. Confusion Matrix
-  [0.93333333 0.06666667],[0.30769231 0.69230769]
+  [0.94117647 0.05882353],[0. 1.]
 
 
 ------------------------------------------------------------------------
@@ -234,31 +252,32 @@ Patient_2
   Counter(0: 151, 1: 151)
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.9795918367346939, 0.9807692307692308, 0.9791666666666667, 0.9795577805590321]
-  [1, 0.9583333333333334, 0.9615384615384616, 0.9583333333333333, 0.9582608695652175]
+  [0, 0.9387755102040817, 0.9444444444444444, 0.94, 0.9386733416770964]
+  [1, 0.9375, 0.9444444444444444, 0.9375, 0.9372549019607843]
   [2, 0.8958333333333334, 0.9021164021164021, 0.8958333333333334, 0.8954248366013073]
-  [3, 0.9583333333333334, 0.9615384615384616, 0.9583333333333333, 0.9582608695652175]
-  [4, 0.9166666666666666, 0.9206349206349206, 0.9147826086956521, 0.916083916083916]
-6. Selected features: 27
+  [3, 0.9375, 0.9423076923076923, 0.94, 0.9374728614850195]
+  [4, 0.9583333333333334, 0.96, 0.96, 0.9583333333333334]
+6. Selected features: 30
 7. Selected features names:
-  ['std_ch1', 'kurtosis_ch2', 'kurtosis_ch8']
-  ['skewness_ch8', 'time_corr_coef1', 'time_corr_coef8']
-  ['time_corr_coef16', 'time_corr_coef17', 'time_corr_coef36']
-  ['time_corr_coef46', 'time_corr_coef76', 'time_corr_coef101']
-  ['time_corr_coef106', 'power_band1_ch10', 'power_band2_ch1']
-  ['power_band2_ch8', 'power_band4_ch1', 'power_band4_ch2']
-  ['power_band4_ch3', 'freq_corr_coef10', 'freq_corr_coef29']
-  ['freq_corr_coef36', 'freq_corr_coef76', 'freq_corr_coef86']
-  ['freq_corr_coef97', 'freq_corr_eig5', 'freq_corr_eig7']
+  ['mean_ch2', 'mean_ch4', 'std_ch1']
+  ['std_ch10', 'skewness_ch2', 'skewness_ch8']
+  ['time_corr_coef2', 'time_corr_coef8', 'time_corr_coef13']
+  ['time_corr_coef17', 'time_corr_coef36', 'time_corr_coef87']
+  ['time_corr_coef93', 'time_corr_coef95', 'time_corr_coef96']
+  ['time_corr_coef101', 'time_corr_coef106', 'power_band2_ch8']
+  ['power_band3_ch13', 'power_band4_ch1', 'power_band4_ch2']
+  ['power_band4_ch3', 'power_band4_ch9', 'freq_corr_coef16']
+  ['freq_corr_coef36', 'freq_corr_coef76', 'freq_corr_coef85']
+  ['freq_corr_coef97', 'freq_corr_coef106', 'freq_corr_eig5']
 8. Evaluation Metrics:
-  Accuracy: 0.9836065573770492
-  Precision: 0.9848484848484849
-  Recall: 0.9827586206896552
-  F1-score: 0.9835357624831309
-  AUROC: 0.9983836206896551
-  RMSE: 0.12803687993289598
+  Accuracy: 0.9672131147540983
+  Precision: 0.9669913419913421
+  Recall: 0.9669913419913421
+  F1-score: 0.9669913419913421
+  AUROC: 0.9761904761904763
+  RMSE: 0.18107149208503706
 9. Confusion Matrix
-  [1. 0.],[0.03448276 0.96551724]
+  [0.96969697 0.03030303],[0.03571429 0.96428571]
 
 
 ------------------------------------------------------------------------
@@ -271,71 +290,52 @@ Patient_3
   Counter(0: 327, 1: 327)
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.9619047619047619, 0.9649122807017544, 0.9615384615384616, 0.9618181818181819]
-  [1, 0.9333333333333333, 0.9345454545454546, 0.933599419448476, 0.9333091371018964]
-  [2, 0.9428571428571428, 0.9428519593613933, 0.9428519593613933, 0.9428519593613933]
-  [3, 0.9615384615384616, 0.9615242323344433, 0.9615242323344433, 0.9615242323344433]
-  [4, 0.9326923076923077, 0.9341372912801484, 0.9326923076923077, 0.9326362542796336]
-6. Selected features: 145
+  [0, 0.9428571428571428, 0.944078947368421, 0.9418181818181819, 0.9426020408163266]
+  [1, 0.9809523809523809, 0.980909090909091, 0.980909090909091, 0.980909090909091]
+  [2, 0.9714285714285714, 0.971938775510204, 0.9709090909090909, 0.9713349713349714]
+  [3, 0.9807692307692307, 0.9807050092764378, 0.9807050092764378, 0.9807050092764378]
+  [4, 0.9807692307692307, 0.9824561403508771, 0.9795918367346939, 0.9806547619047619]
+6. Selected features: 88
 7. Selected features names:
-  ['mean_ch2', 'mean_ch3', 'mean_ch21']
-  ['mean_ch45', 'kurtosis_ch21', 'kurtosis_ch42']
-  ['kurtosis_ch46', 'kurtosis_ch49', 'skewness_ch6']
-  ['skewness_ch19', 'skewness_ch30', 'skewness_ch31']
-  ['skewness_ch47', 'time_corr_coef51', 'time_corr_coef140']
-  ['time_corr_coef212', 'time_corr_coef218', 'time_corr_coef357']
-  ['time_corr_coef407', 'time_corr_coef410', 'time_corr_coef489']
-  ['time_corr_coef502', 'time_corr_coef542', 'time_corr_coef588']
-  ['time_corr_coef590', 'time_corr_coef674', 'time_corr_coef746']
-  ['time_corr_coef763', 'time_corr_coef771', 'time_corr_coef774']
-  ['time_corr_coef783', 'time_corr_coef812', 'time_corr_coef860']
-  ['time_corr_coef891', 'time_corr_coef892', 'time_corr_coef894']
-  ['time_corr_coef958', 'time_corr_coef989', 'time_corr_coef1005']
-  ['time_corr_coef1024', 'time_corr_coef1040', 'time_corr_coef1091']
-  ['time_corr_coef1108', 'time_corr_coef1140', 'time_corr_coef1238']
-  ['time_corr_coef1290', 'time_corr_coef1315', 'time_corr_coef1316']
-  ['time_corr_coef1338', 'time_corr_coef1351', 'time_corr_coef1360']
-  ['time_corr_coef1366', 'time_corr_coef1381', 'time_corr_coef1398']
-  ['time_corr_coef1428', 'time_corr_coef1441', 'time_corr_coef1471']
-  ['time_corr_eig1', 'time_corr_eig5', 'time_corr_eig9']
-  ['power_band1_ch12', 'power_band1_ch29', 'power_band1_ch42']
-  ['power_band2_ch10', 'power_band2_ch41', 'power_band2_ch54']
-  ['power_band3_ch5', 'power_band3_ch29', 'power_band3_ch36']
-  ['power_band4_ch9', 'power_band4_ch12', 'power_band4_ch13']
-  ['power_band4_ch15', 'power_band4_ch16', 'power_band4_ch21']
-  ['power_band4_ch24', 'power_band4_ch26', 'power_band4_ch27']
+  ['kurtosis_ch49', 'skewness_ch51', 'skewness_ch55']
+  ['time_corr_coef51', 'time_corr_coef212', 'time_corr_coef218']
+  ['time_corr_coef321', 'time_corr_coef402', 'time_corr_coef406']
+  ['time_corr_coef407', 'time_corr_coef420', 'time_corr_coef444']
+  ['time_corr_coef451', 'time_corr_coef452', 'time_corr_coef459']
+  ['time_corr_coef496', 'time_corr_coef502', 'time_corr_coef508']
+  ['time_corr_coef511', 'time_corr_coef518', 'time_corr_coef583']
+  ['time_corr_coef588', 'time_corr_coef590', 'time_corr_coef670']
+  ['time_corr_coef821', 'time_corr_coef830', 'time_corr_coef926']
+  ['time_corr_coef1080', 'time_corr_coef1084', 'time_corr_coef1108']
+  ['time_corr_coef1114', 'time_corr_coef1140', 'time_corr_coef1238']
+  ['time_corr_coef1245', 'time_corr_coef1257', 'time_corr_coef1315']
+  ['time_corr_coef1316', 'time_corr_coef1317', 'time_corr_coef1323']
+  ['time_corr_coef1338', 'time_corr_coef1351', 'time_corr_coef1366']
+  ['time_corr_coef1367', 'time_corr_coef1381', 'time_corr_coef1441']
+  ['time_corr_eig1', 'power_band1_ch41', 'power_band1_ch42']
+  ['power_band2_ch10', 'power_band3_ch5', 'power_band3_ch6']
+  ['power_band3_ch10', 'power_band3_ch26', 'power_band3_ch36']
+  ['power_band4_ch6', 'power_band4_ch12', 'power_band4_ch13']
+  ['power_band4_ch16', 'power_band4_ch24', 'power_band4_ch26']
   ['power_band4_ch29', 'power_band4_ch41', 'power_band5_ch15']
-  ['power_band5_ch21', 'power_band5_ch27', 'power_band5_ch29']
-  ['power_band5_ch45', 'power_band6_ch42', 'freq_corr_coef73']
-  ['freq_corr_coef93', 'freq_corr_coef94', 'freq_corr_coef118']
-  ['freq_corr_coef125', 'freq_corr_coef171', 'freq_corr_coef195']
-  ['freq_corr_coef214', 'freq_corr_coef236', 'freq_corr_coef238']
-  ['freq_corr_coef275', 'freq_corr_coef318', 'freq_corr_coef321']
-  ['freq_corr_coef346', 'freq_corr_coef348', 'freq_corr_coef411']
-  ['freq_corr_coef426', 'freq_corr_coef451', 'freq_corr_coef456']
-  ['freq_corr_coef498', 'freq_corr_coef500', 'freq_corr_coef525']
-  ['freq_corr_coef548', 'freq_corr_coef573', 'freq_corr_coef624']
-  ['freq_corr_coef631', 'freq_corr_coef636', 'freq_corr_coef637']
-  ['freq_corr_coef676', 'freq_corr_coef698', 'freq_corr_coef713']
-  ['freq_corr_coef734', 'freq_corr_coef757', 'freq_corr_coef772']
-  ['freq_corr_coef796', 'freq_corr_coef803', 'freq_corr_coef887']
-  ['freq_corr_coef905', 'freq_corr_coef925', 'freq_corr_coef962']
-  ['freq_corr_coef1014', 'freq_corr_coef1015', 'freq_corr_coef1051']
-  ['freq_corr_coef1080', 'freq_corr_coef1084', 'freq_corr_coef1130']
-  ['freq_corr_coef1150', 'freq_corr_coef1227', 'freq_corr_coef1238']
-  ['freq_corr_coef1254', 'freq_corr_coef1336', 'freq_corr_coef1338']
-  ['freq_corr_coef1432', 'freq_corr_coef1433', 'freq_corr_coef1437']
-  ['freq_corr_coef1440', 'freq_corr_coef1454', 'freq_corr_eig1']
-  ['freq_corr_eig9']
+  ['power_band5_ch21', 'power_band5_ch23', 'power_band5_ch45']
+  ['freq_corr_coef47', 'freq_corr_coef99', 'freq_corr_coef222']
+  ['freq_corr_coef231', 'freq_corr_coef236', 'freq_corr_coef426']
+  ['freq_corr_coef500', 'freq_corr_coef525', 'freq_corr_coef531']
+  ['freq_corr_coef925', 'freq_corr_coef926', 'freq_corr_coef960']
+  ['freq_corr_coef1001', 'freq_corr_coef1014', 'freq_corr_coef1115']
+  ['freq_corr_coef1125', 'freq_corr_coef1238', 'freq_corr_coef1312']
+  ['freq_corr_coef1316', 'freq_corr_coef1440', 'freq_corr_coef1448']
+  ['freq_corr_coef1469']
 8. Evaluation Metrics:
-  Accuracy: 0.9618320610687023
-  Precision: 0.9616371268656716
-  Recall: 0.9620681605975724
-  F1-score: 0.9617964421114027
-  AUROC: 0.9938141923436041
-  RMSE: 0.19536616629114087
+  Accuracy: 0.9694656488549618
+  Precision: 0.9657287157287158
+  Recall: 0.9713972736124634
+  F1-score: 0.9683115626511852
+  AUROC: 0.9866114897760467
+  RMSE: 0.1747408113322076
 9. Confusion Matrix
-  [0.96825397 0.03174603],[0.04411765 0.95588235]
+  [0.98076923 0.01923077],[0.03797468 0.96202532]
 
 
 ------------------------------------------------------------------------
@@ -350,23 +350,22 @@ Patient_4
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
   [0, 1.0, 1.0, 1.0, 1.0]
   [1, 1.0, 1.0, 1.0, 1.0]
-  [2, 1.0, 1.0, 1.0, 1.0]
-  [3, 0.8333333333333334, 0.875, 0.8333333333333333, 0.8285714285714285]
+  [2, 0.8333333333333334, 0.8333333333333333, 0.875, 0.8285714285714285]
+  [3, 1.0, 1.0, 1.0, 1.0]
   [4, 1.0, 1.0, 1.0, 1.0]
-6. Selected features: 9
+6. Selected features: 6
 7. Selected features names:
-  ['time_corr_coef185', 'time_corr_coef1393', 'time_corr_coef2096']
-  ['power_band1_ch34', 'power_band1_ch35', 'power_band4_ch49']
-  ['power_band5_ch37', 'power_band5_ch44', 'freq_corr_coef548']
+  ['std_ch43', 'std_ch70', 'power_band4_ch70']
+  ['power_band5_ch53', 'power_band5_ch61', 'power_band5_ch70']
 8. Evaluation Metrics:
-  Accuracy: 0.875
-  Precision: 0.875
-  Recall: 0.9
-  F1-score: 0.873015873015873
+  Accuracy: 1.0
+  Precision: 1.0
+  Recall: 1.0
+  F1-score: 1.0
   AUROC: 1.0
-  RMSE: 0.3535533905932738
+  RMSE: 0.0
 9. Confusion Matrix
-  [1. 0.],[0.2 0.8]
+  [1. 0.],[0. 1.]
 
 
 ------------------------------------------------------------------------
@@ -379,50 +378,50 @@ Patient_5
   Counter(0: 135, 1: 135)
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.9772727272727273, 0.9782608695652174, 0.9772727272727273, 0.9772609819121447]
-  [1, 0.9767441860465116, 0.9772727272727273, 0.9772727272727273, 0.9767441860465117]
-  [2, 0.9534883720930233, 0.9565217391304348, 0.9545454545454546, 0.9534632034632033]
-  [3, 0.8837209302325582, 0.8922222222222222, 0.8820346320346321, 0.8827059465357339]
-  [4, 0.8837209302325582, 0.9074074074074074, 0.8809523809523809, 0.881412024269167]
-6. Selected features: 83
+  [0, 0.9772727272727273, 0.9772727272727273, 0.9782608695652174, 0.9772609819121447]
+  [1, 1.0, 1.0, 1.0, 1.0]
+  [2, 0.9767441860465116, 0.9772727272727273, 0.9772727272727273, 0.9767441860465117]
+  [3, 0.9534883720930233, 0.9565217391304348, 0.9545454545454546, 0.9534632034632033]
+  [4, 0.9534883720930233, 0.9534632034632035, 0.9534632034632035, 0.9534632034632035]
+6. Selected features: 82
 7. Selected features names:
-  ['std_ch9', 'std_ch16', 'std_ch25']
-  ['kurtosis_ch33', 'skewness_ch1', 'skewness_ch36']
-  ['skewness_ch42', 'skewness_ch49', 'skewness_ch50']
-  ['skewness_ch57', 'skewness_ch58', 'time_corr_coef128']
-  ['time_corr_coef136', 'time_corr_coef214', 'time_corr_coef254']
-  ['time_corr_coef636', 'time_corr_coef706', 'time_corr_coef828']
-  ['time_corr_coef857', 'time_corr_coef865', 'time_corr_coef877']
-  ['time_corr_coef1033', 'time_corr_coef1071', 'time_corr_coef1078']
-  ['time_corr_coef1116', 'time_corr_coef1156', 'time_corr_coef1203']
-  ['time_corr_coef1249', 'time_corr_coef1257', 'time_corr_coef1307']
-  ['time_corr_coef1315', 'time_corr_coef1380', 'time_corr_coef1394']
-  ['time_corr_coef1420', 'time_corr_coef1422', 'time_corr_coef1472']
-  ['time_corr_coef1573', 'time_corr_coef1642', 'time_corr_coef1663']
-  ['time_corr_coef1673', 'time_corr_coef1758', 'time_corr_coef1895']
-  ['time_corr_coef1969', 'time_corr_coef1996', 'time_corr_eig18']
-  ['time_corr_eig19', 'time_corr_eig50', 'power_band1_ch48']
-  ['power_band2_ch23', 'power_band2_ch25', 'power_band3_ch9']
-  ['power_band3_ch21', 'power_band3_ch22', 'power_band3_ch29']
-  ['power_band5_ch1', 'power_band6_ch41', 'freq_corr_coef11']
-  ['freq_corr_coef13', 'freq_corr_coef17', 'freq_corr_coef29']
-  ['freq_corr_coef35', 'freq_corr_coef48', 'freq_corr_coef60']
-  ['freq_corr_coef169', 'freq_corr_coef304', 'freq_corr_coef371']
-  ['freq_corr_coef413', 'freq_corr_coef416', 'freq_corr_coef509']
-  ['freq_corr_coef609', 'freq_corr_coef684', 'freq_corr_coef693']
-  ['freq_corr_coef708', 'freq_corr_coef724', 'freq_corr_coef948']
-  ['freq_corr_coef964', 'freq_corr_coef1053', 'freq_corr_coef1272']
-  ['freq_corr_coef1310', 'freq_corr_coef1375', 'freq_corr_coef1675']
-  ['freq_corr_coef1706', 'freq_corr_coef1934']
+  ['mean_ch59', 'std_ch9', 'std_ch16']
+  ['kurtosis_ch2', 'kurtosis_ch13', 'kurtosis_ch43']
+  ['kurtosis_ch59', 'kurtosis_ch60', 'skewness_ch11']
+  ['skewness_ch33', 'skewness_ch41', 'skewness_ch50']
+  ['skewness_ch51', 'skewness_ch52', 'skewness_ch57']
+  ['skewness_ch58', 'skewness_ch60', 'time_corr_coef168']
+  ['time_corr_coef196', 'time_corr_coef371', 'time_corr_coef372']
+  ['time_corr_coef381', 'time_corr_coef427', 'time_corr_coef428']
+  ['time_corr_coef435', 'time_corr_coef706', 'time_corr_coef792']
+  ['time_corr_coef809', 'time_corr_coef848', 'time_corr_coef857']
+  ['time_corr_coef1114', 'time_corr_coef1122', 'time_corr_coef1156']
+  ['time_corr_coef1269', 'time_corr_coef1292', 'time_corr_coef1307']
+  ['time_corr_coef1314', 'time_corr_coef1351', 'time_corr_coef1401']
+  ['time_corr_coef1463', 'time_corr_coef1642', 'time_corr_coef1700']
+  ['time_corr_coef1743', 'time_corr_coef1758', 'time_corr_coef1996']
+  ['power_band1_ch9', 'power_band1_ch17', 'power_band1_ch25']
+  ['power_band1_ch41', 'power_band1_ch48', 'power_band2_ch8']
+  ['power_band2_ch56', 'power_band3_ch21', 'power_band4_ch22']
+  ['power_band4_ch48', 'power_band5_ch1', 'power_band5_ch41']
+  ['power_band6_ch41', 'freq_corr_coef5', 'freq_corr_coef11']
+  ['freq_corr_coef24', 'freq_corr_coef35', 'freq_corr_coef42']
+  ['freq_corr_coef60', 'freq_corr_coef63', 'freq_corr_coef680']
+  ['freq_corr_coef843', 'freq_corr_coef1083', 'freq_corr_coef1143']
+  ['freq_corr_coef1179', 'freq_corr_coef1258', 'freq_corr_coef1273']
+  ['freq_corr_coef1339', 'freq_corr_coef1347', 'freq_corr_coef1456']
+  ['freq_corr_coef1481', 'freq_corr_coef1503', 'freq_corr_coef1529']
+  ['freq_corr_coef1793', 'freq_corr_coef1820', 'freq_corr_coef1846']
+  ['freq_corr_coef1962']
 8. Evaluation Metrics:
-  Accuracy: 0.9629629629629629
-  Precision: 0.9655172413793103
-  Recall: 0.962962962962963
-  F1-score: 0.9629120879120878
-  AUROC: 1.0
-  RMSE: 0.19245008972987526
+  Accuracy: 0.9814814814814815
+  Precision: 0.984375
+  Recall: 0.9782608695652174
+  F1-score: 0.9809523809523809
+  AUROC: 0.9768583450210379
+  RMSE: 0.13608276348795434
 9. Confusion Matrix
-  [0.92592593 0.07407407],[0. 1.]
+  [0.95652174 0.04347826],[0. 1.]
 
 
 ------------------------------------------------------------------------
@@ -435,16 +434,26 @@ Patient_6
   Counter(0: 225, 1: 225)
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.9583333333333334, 0.9615384615384616, 0.9583333333333333, 0.9582608695652175]
-  [1, 1.0, 1.0, 1.0, 1.0]
-  [2, 0.9583333333333334, 0.9615384615384616, 0.9583333333333333, 0.9582608695652175]
-  [3, 0.9583333333333334, 0.9615384615384616, 0.9583333333333333, 0.9582608695652175]
-  [4, 0.9722222222222222, 0.9736842105263157, 0.9722222222222222, 0.9722007722007722]
-6. Selected features: 9
+  [0, 1.0, 1.0, 1.0, 1.0]
+  [1, 0.9583333333333334, 0.9586872586872587, 0.9583333333333333, 0.9583252942311403]
+  [2, 0.9861111111111112, 0.9861111111111112, 0.9864864864864865, 0.9861084314103801]
+  [3, 0.9583333333333334, 0.9583333333333333, 0.9586872586872587, 0.9583252942311403]
+  [4, 0.9861111111111112, 0.986842105263158, 0.9857142857142858, 0.986086956521739]
+6. Selected features: 38
 7. Selected features names:
-  ['std_ch24', 'skewness_ch15', 'time_corr_coef111']
-  ['power_band2_ch15', 'power_band2_ch24', 'power_band3_ch15']
-  ['power_band3_ch23', 'power_band3_ch24', 'freq_corr_coef111']
+  ['std_ch1', 'std_ch8', 'std_ch24']
+  ['std_ch25', 'std_ch26', 'kurtosis_ch9']
+  ['skewness_ch15', 'time_corr_coef51', 'time_corr_coef85']
+  ['time_corr_coef86', 'time_corr_coef111', 'time_corr_coef177']
+  ['time_corr_coef299', 'time_corr_coef315', 'time_corr_coef331']
+  ['time_corr_coef408', 'time_corr_coef410', 'power_band1_ch3']
+  ['power_band1_ch19', 'power_band2_ch4', 'power_band2_ch5']
+  ['power_band2_ch8', 'power_band2_ch15', 'power_band3_ch15']
+  ['power_band3_ch23', 'power_band3_ch24', 'power_band4_ch4']
+  ['power_band4_ch6', 'power_band4_ch24', 'power_band6_ch7']
+  ['power_band6_ch30', 'freq_corr_coef111', 'freq_corr_coef167']
+  ['freq_corr_coef191', 'freq_corr_coef315', 'freq_corr_coef317']
+  ['freq_corr_coef324', 'freq_corr_coef363']
 8. Evaluation Metrics:
   Accuracy: 1.0
   Precision: 1.0
@@ -466,53 +475,37 @@ Patient_7
   Counter(0: 282, 1: 282)
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.978021978021978, 0.9787234042553192, 0.9782608695652174, 0.9780193236714976]
-  [1, 0.9777777777777777, 0.9791666666666667, 0.9772727272727273, 0.9777337951509154]
-  [2, 0.9555555555555556, 0.9568452380952381, 0.9550395256916996, 0.9554675903018308]
-  [3, 0.9888888888888889, 0.9893617021276595, 0.9886363636363636, 0.9888765294771968]
-  [4, 0.9777777777777777, 0.9777667984189724, 0.9777667984189724, 0.9777667984189724]
-6. Selected features: 92
+  [0, 0.9560439560439561, 0.96, 0.9555555555555555, 0.9559108527131783]
+  [1, 0.9777777777777777, 0.9787234042553192, 0.9777777777777779, 0.9777667984189724]
+  [2, 0.9888888888888889, 0.9891304347826086, 0.9888888888888889, 0.9888875169774046]
+  [3, 0.9777777777777777, 0.9791666666666667, 0.9772727272727273, 0.9777337951509154]
+  [4, 0.9888888888888889, 0.9893617021276595, 0.9886363636363636, 0.9888765294771968]
+6. Selected features: 44
 7. Selected features names:
-  ['mean_ch1', 'mean_ch15', 'mean_ch16']
-  ['std_ch2', 'skewness_ch7', 'time_corr_coef8']
-  ['time_corr_coef12', 'time_corr_coef18', 'time_corr_coef49']
-  ['time_corr_coef72', 'time_corr_coef73', 'time_corr_coef74']
-  ['time_corr_coef135', 'time_corr_coef177', 'time_corr_coef197']
-  ['time_corr_coef198', 'time_corr_coef218', 'time_corr_coef219']
-  ['time_corr_coef223', 'time_corr_coef232', 'time_corr_coef242']
-  ['time_corr_coef267', 'time_corr_coef270', 'time_corr_coef271']
-  ['time_corr_coef272', 'time_corr_coef273', 'time_corr_coef281']
-  ['time_corr_coef293', 'time_corr_coef294', 'time_corr_coef302']
-  ['time_corr_coef335', 'time_corr_coef347', 'time_corr_coef351']
-  ['time_corr_coef365', 'time_corr_coef383', 'time_corr_coef404']
-  ['time_corr_coef411', 'time_corr_coef485', 'time_corr_coef500']
-  ['time_corr_coef517', 'time_corr_coef528', 'time_corr_coef532']
-  ['time_corr_coef587', 'time_corr_coef602', 'time_corr_coef603']
-  ['time_corr_coef608', 'time_corr_eig33', 'time_corr_eig34']
-  ['power_band1_ch1', 'power_band1_ch3', 'power_band1_ch33']
-  ['power_band1_ch36', 'power_band2_ch28', 'power_band2_ch31']
-  ['power_band2_ch36', 'power_band3_ch1', 'power_band3_ch11']
-  ['power_band3_ch22', 'power_band3_ch28', 'power_band3_ch30']
-  ['power_band4_ch1', 'power_band4_ch3', 'power_band4_ch4']
-  ['power_band4_ch26', 'power_band5_ch1', 'power_band5_ch9']
-  ['power_band5_ch17', 'power_band6_ch1', 'power_band6_ch8']
-  ['freq_corr_coef14', 'freq_corr_coef15', 'freq_corr_coef35']
-  ['freq_corr_coef45', 'freq_corr_coef94', 'freq_corr_coef102']
-  ['freq_corr_coef114', 'freq_corr_coef131', 'freq_corr_coef195']
-  ['freq_corr_coef227', 'freq_corr_coef238', 'freq_corr_coef251']
-  ['freq_corr_coef282', 'freq_corr_coef307', 'freq_corr_coef333']
-  ['freq_corr_coef404', 'freq_corr_coef443', 'freq_corr_coef456']
-  ['freq_corr_coef495', 'freq_corr_coef513', 'freq_corr_coef534']
-  ['freq_corr_coef554', 'freq_corr_coef584']
+  ['std_ch2', 'std_ch4', 'std_ch8']
+  ['std_ch13', 'time_corr_coef8', 'time_corr_coef21']
+  ['time_corr_coef177', 'time_corr_coef242', 'time_corr_coef276']
+  ['time_corr_coef294', 'time_corr_coef298', 'time_corr_coef347']
+  ['time_corr_coef598', 'time_corr_coef602', 'time_corr_coef603']
+  ['time_corr_coef609', 'power_band1_ch1', 'power_band1_ch36']
+  ['power_band2_ch23', 'power_band2_ch28', 'power_band2_ch36']
+  ['power_band3_ch1', 'power_band3_ch8', 'power_band3_ch13']
+  ['power_band3_ch22', 'power_band3_ch26', 'power_band3_ch28']
+  ['power_band3_ch30', 'power_band4_ch3', 'power_band4_ch13']
+  ['power_band4_ch26', 'power_band4_ch30', 'power_band5_ch9']
+  ['power_band5_ch10', 'power_band5_ch11', 'freq_corr_coef35']
+  ['freq_corr_coef279', 'freq_corr_coef307', 'freq_corr_coef335']
+  ['freq_corr_coef404', 'freq_corr_coef474', 'freq_corr_coef476']
+  ['freq_corr_coef577', 'freq_corr_coef584']
 8. Evaluation Metrics:
-  Accuracy: 0.9469026548672567
-  Precision: 0.9511217948717949
-  Recall: 0.9437263556116016
-  F1-score: 0.9461904761904762
-  AUROC: 0.9847099621689785
-  RMSE: 0.23042861179277058
+  Accuracy: 0.9734513274336283
+  Precision: 0.9731974921630093
+  Recall: 0.9737915881983679
+  F1-score: 0.9734180192895789
+  AUROC: 0.997489014438167
+  RMSE: 0.1629376339780705
 9. Confusion Matrix
-  [0.90384615 0.09615385],[0.01639344 0.98360656]
+  [0.98148148 0.01851852],[0.03389831 0.96610169]
 
 
 ------------------------------------------------------------------------
@@ -525,45 +518,39 @@ Patient_8
   Counter(0: 180, 1: 180)
 5. Evaluation metrics CV:
   ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
-  [0, 0.9137931034482759, 0.9193939393939394, 0.9119047619047619, 0.9131476489967055]
-  [1, 0.9655172413793104, 0.9655172413793104, 0.9655172413793104, 0.9655172413793104]
-  [2, 0.9310344827586207, 0.9330943847072879, 0.9310344827586208, 0.930952380952381]
-  [3, 0.9649122807017544, 0.967741935483871, 0.9642857142857143, 0.9648148148148148]
-  [4, 0.8947368421052632, 0.9142857142857144, 0.8928571428571428, 0.893125]
-6. Selected features: 70
+  [0, 0.9310344827586207, 0.9330943847072879, 0.9310344827586208, 0.930952380952381]
+  [1, 0.9310344827586207, 0.9411764705882353, 0.9285714285714286, 0.9302884615384615]
+  [2, 0.9655172413793104, 0.96875, 0.9642857142857143, 0.965352449223417]
+  [3, 0.8947368421052632, 0.9142857142857144, 0.8928571428571428, 0.893125]
+  [4, 1.0, 1.0, 1.0, 1.0]
+6. Selected features: 52
 7. Selected features names:
-  ['mean_ch2', 'mean_ch9', 'mean_ch11']
-  ['mean_ch15', 'mean_ch16', 'std_ch12']
-  ['std_ch14', 'std_ch15', 'kurtosis_ch10']
-  ['skewness_ch2', 'skewness_ch3', 'skewness_ch11']
-  ['time_corr_coef3', 'time_corr_coef7', 'time_corr_coef8']
-  ['time_corr_coef19', 'time_corr_coef21', 'time_corr_coef30']
-  ['time_corr_coef56', 'time_corr_coef58', 'time_corr_coef65']
-  ['time_corr_coef66', 'time_corr_coef78', 'time_corr_coef85']
-  ['time_corr_coef88', 'time_corr_coef100', 'time_corr_coef111']
-  ['time_corr_coef118', 'power_band1_ch9', 'power_band1_ch10']
-  ['power_band1_ch11', 'power_band1_ch13', 'power_band3_ch10']
-  ['power_band4_ch3', 'power_band4_ch10', 'power_band4_ch11']
-  ['power_band5_ch10', 'power_band5_ch11', 'power_band5_ch12']
-  ['power_band5_ch13', 'power_band5_ch14', 'power_band5_ch16']
-  ['power_band6_ch11', 'power_band6_ch12', 'freq_corr_coef3']
-  ['freq_corr_coef8', 'freq_corr_coef10', 'freq_corr_coef12']
-  ['freq_corr_coef13', 'freq_corr_coef14', 'freq_corr_coef26']
-  ['freq_corr_coef30', 'freq_corr_coef33', 'freq_corr_coef35']
+  ['mean_ch15', 'mean_ch16', 'kurtosis_ch2']
+  ['skewness_ch2', 'skewness_ch4', 'skewness_ch5']
+  ['time_corr_coef3', 'time_corr_coef30', 'time_corr_coef34']
+  ['time_corr_coef44', 'time_corr_coef46', 'time_corr_coef56']
+  ['time_corr_coef58', 'time_corr_coef61', 'time_corr_coef78']
+  ['time_corr_coef98', 'time_corr_coef100', 'time_corr_coef112']
+  ['time_corr_eig15', 'power_band1_ch2', 'power_band1_ch10']
+  ['power_band2_ch1', 'power_band2_ch10', 'power_band3_ch10']
+  ['power_band3_ch15', 'power_band4_ch10', 'power_band4_ch11']
+  ['power_band6_ch1', 'power_band6_ch12', 'power_band6_ch14']
+  ['power_band6_ch16', 'freq_corr_coef8', 'freq_corr_coef12']
+  ['freq_corr_coef13', 'freq_corr_coef14', 'freq_corr_coef25']
+  ['freq_corr_coef30', 'freq_corr_coef33', 'freq_corr_coef37']
   ['freq_corr_coef38', 'freq_corr_coef39', 'freq_corr_coef48']
-  ['freq_corr_coef51', 'freq_corr_coef60', 'freq_corr_coef70']
-  ['freq_corr_coef77', 'freq_corr_coef88', 'freq_corr_coef89']
-  ['freq_corr_coef91', 'freq_corr_coef93', 'freq_corr_coef97']
-  ['freq_corr_coef102', 'freq_corr_coef110', 'freq_corr_coef112']
-  ['freq_corr_coef117']
+  ['freq_corr_coef51', 'freq_corr_coef72', 'freq_corr_coef77']
+  ['freq_corr_coef80', 'freq_corr_coef85', 'freq_corr_coef94']
+  ['freq_corr_coef95', 'freq_corr_coef97', 'freq_corr_coef106']
+  ['freq_corr_coef112']
 8. Evaluation Metrics:
   Accuracy: 0.9861111111111112
-  Precision: 0.9857142857142858
-  Recall: 0.986842105263158
-  F1-score: 0.986086956521739
-  AUROC: 0.9996130030959752
+  Precision: 0.9852941176470589
+  Recall: 0.9871794871794872
+  F1-score: 0.9860438069393292
+  AUROC: 0.9988344988344988
   RMSE: 0.11785113019775792
 9. Confusion Matrix
-  [1. 0.],[0.02631579 0.97368421]
+  [1. 0.],[0.02564103 0.97435897]
 
 
