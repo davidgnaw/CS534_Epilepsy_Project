@@ -1,0 +1,313 @@
+CART RF Detection Summary
+
+
+------------------------------------------------------------------------
+Train_detection/Patient
+1. One-second eeg segments: 2745
+2. Extracted features: 4800
+3. Classes distribution before balancing:
+  Counter(0: 2610, 1: 135)
+4. Classes distribution after balancing:
+  Counter(0: 135, 1: 135)
+5. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.9772727272727273, 0.9782608695652174, 0.9772727272727273, 0.9772609819121447]
+  [1, 0.8372093023255814, 0.8376623376623377, 0.8376623376623377, 0.8372093023255814]
+  [2, 0.7441860465116279, 0.7488888888888889, 0.7424242424242424, 0.7419530823786143]
+  [3, 0.813953488372093, 0.8666666666666667, 0.8095238095238095, 0.8054298642533937]
+  [4, 0.8837209302325582, 0.8847826086956522, 0.8831168831168831, 0.8834688346883468]
+6. Selected features: 42
+7. Selected features names:
+  ['std_ch9', 'std_ch16', 'std_ch25']
+  ['kurtosis_ch41', 'kurtosis_ch59', 'skewness_ch1']
+  ['skewness_ch41', 'skewness_ch42', 'skewness_ch49']
+  ['skewness_ch50', 'skewness_ch60', 'time_corr_coef128']
+  ['time_corr_coef188', 'time_corr_coef254', 'time_corr_coef313']
+  ['time_corr_coef364', 'time_corr_coef372', 'time_corr_coef427']
+  ['time_corr_coef757', 'time_corr_coef792', 'time_corr_coef848']
+  ['time_corr_coef1078', 'time_corr_coef1244', 'time_corr_coef1276']
+  ['time_corr_coef1394', 'time_corr_coef1673', 'time_corr_coef1681']
+  ['time_corr_coef1881', 'time_corr_coef1895', 'time_corr_coef1990']
+  ['time_corr_coef1996', 'power_band1_ch41', 'power_band2_ch8']
+  ['power_band2_ch16', 'power_band3_ch21', 'power_band5_ch1']
+  ['freq_corr_coef9', 'freq_corr_coef11', 'freq_corr_coef17']
+  ['freq_corr_coef56', 'freq_corr_coef60', 'freq_corr_coef578']
+8. Evaluation Metrics:
+  Accuracy: 0.9814814814814815
+  Precision: 0.9807692307692308
+  Recall: 0.9827586206896552
+  F1-score: 0.9814241486068112
+  AUROC: 1.0
+  RMSE: 0.13608276348795434
+9. Confusion Matrix
+  [1. 0.],[0.03448276 0.96551724]
+
+
+------------------------------------------------------------------------
+Train_detection/Dog
+1. One-second eeg segments: 596
+2. Extracted features: 432
+3. Classes distribution before balancing:
+  Counter(0: 418, 1: 178)
+4. Classes distribution after balancing:
+  Counter(0: 178, 1: 178)
+5. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.9298245614035088, 0.9314814814814815, 0.9304187192118227, 0.9298029556650247]
+  [1, 0.9824561403508771, 0.9827586206896552, 0.9827586206896552, 0.9824561403508771]
+  [2, 0.9824561403508771, 0.9821428571428572, 0.9833333333333334, 0.9824345146379044]
+  [3, 0.9824561403508771, 0.9838709677419355, 0.9814814814814814, 0.9823693164243736]
+  [4, 0.9821428571428571, 0.9821428571428572, 0.9827586206896552, 0.9821371610845295]
+6. Selected features: 29
+7. Selected features names:
+  ['mean_ch7', 'time_corr_coef8', 'time_corr_coef16']
+  ['time_corr_coef23', 'time_corr_coef26', 'time_corr_coef27']
+  ['time_corr_coef29', 'time_corr_coef45', 'time_corr_coef46']
+  ['time_corr_coef55', 'time_corr_coef69', 'time_corr_coef73']
+  ['time_corr_coef78', 'time_corr_coef97', 'time_corr_coef98']
+  ['time_corr_coef103', 'time_corr_coef114', 'time_corr_coef115']
+  ['time_corr_coef120', 'time_corr_eig15', 'power_band2_ch12']
+  ['power_band6_ch1', 'power_band6_ch4', 'power_band6_ch5']
+  ['power_band6_ch12', 'power_band6_ch13', 'freq_corr_coef41']
+  ['freq_corr_coef102', 'freq_corr_coef103']
+8. Evaluation Metrics:
+  Accuracy: 0.9861111111111112
+  Precision: 0.984375
+  Recall: 0.9878048780487805
+  F1-score: 0.9858906525573192
+  AUROC: 0.998426435877262
+  RMSE: 0.11785113019775792
+9. Confusion Matrix
+  [1. 0.],[0.02439024 0.97560976]
+
+
+------------------------------------------------------------------------
+Train_detection/Patient
+1. One-second eeg segments: 1041
+2. Extracted features: 3630
+3. Classes distribution before balancing:
+  Counter(0: 714, 1: 327)
+4. Classes distribution after balancing:
+  Counter(0: 327, 1: 327)
+5. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.9238095238095239, 0.9269992663242848, 0.9226579520697167, 0.923469387755102]
+  [1, 0.8952380952380953, 0.8959694989106753, 0.8959694989106753, 0.8952380952380952]
+  [2, 0.8571428571428571, 0.8784298780487805, 0.8605664488017428, 0.8558352402745995]
+  [3, 0.9038461538461539, 0.9038461538461539, 0.9044444444444444, 0.9038105808361081]
+  [4, 0.9326923076923077, 0.9330241187384045, 0.9322222222222223, 0.9325363729033453]
+6. Selected features: 101
+7. Selected features names:
+  ['mean_ch24', 'mean_ch43', 'kurtosis_ch20']
+  ['kurtosis_ch42', 'kurtosis_ch49', 'skewness_ch38']
+  ['skewness_ch53', 'time_corr_coef212', 'time_corr_coef218']
+  ['time_corr_coef219', 'time_corr_coef402', 'time_corr_coef406']
+  ['time_corr_coef426', 'time_corr_coef452', 'time_corr_coef496']
+  ['time_corr_coef508', 'time_corr_coef563', 'time_corr_coef586']
+  ['time_corr_coef588', 'time_corr_coef616', 'time_corr_coef697']
+  ['time_corr_coef746', 'time_corr_coef830', 'time_corr_coef839']
+  ['time_corr_coef875', 'time_corr_coef894', 'time_corr_coef904']
+  ['time_corr_coef905', 'time_corr_coef926', 'time_corr_coef958']
+  ['time_corr_coef1070', 'time_corr_coef1084', 'time_corr_coef1091']
+  ['time_corr_coef1105', 'time_corr_coef1108', 'time_corr_coef1140']
+  ['time_corr_coef1238', 'time_corr_coef1245', 'time_corr_coef1257']
+  ['time_corr_coef1315', 'time_corr_coef1323', 'time_corr_coef1338']
+  ['time_corr_coef1351', 'time_corr_coef1352', 'time_corr_coef1366']
+  ['time_corr_coef1381', 'time_corr_coef1441', 'time_corr_coef1450']
+  ['time_corr_coef1457', 'time_corr_coef1472', 'time_corr_eig1']
+  ['time_corr_eig2', 'power_band1_ch12', 'power_band1_ch41']
+  ['power_band1_ch42', 'power_band2_ch42', 'power_band3_ch5']
+  ['power_band3_ch6', 'power_band3_ch23', 'power_band3_ch24']
+  ['power_band3_ch26', 'power_band3_ch29', 'power_band3_ch36']
+  ['power_band4_ch5', 'power_band4_ch6', 'power_band4_ch12']
+  ['power_band4_ch13', 'power_band4_ch15', 'power_band4_ch16']
+  ['power_band4_ch21', 'power_band4_ch23', 'power_band4_ch24']
+  ['power_band4_ch26', 'power_band4_ch29', 'power_band5_ch13']
+  ['power_band5_ch15', 'power_band5_ch21', 'power_band5_ch23']
+  ['power_band5_ch45', 'freq_corr_coef102', 'freq_corr_coef228']
+  ['freq_corr_coef231', 'freq_corr_coef232', 'freq_corr_coef239']
+  ['freq_corr_coef250', 'freq_corr_coef379', 'freq_corr_coef456']
+  ['freq_corr_coef525', 'freq_corr_coef531', 'freq_corr_coef542']
+  ['freq_corr_coef633', 'freq_corr_coef713', 'freq_corr_coef720']
+  ['freq_corr_coef872', 'freq_corr_coef938', 'freq_corr_coef1014']
+  ['freq_corr_coef1089', 'freq_corr_coef1146', 'freq_corr_coef1312']
+  ['freq_corr_coef1337', 'freq_corr_coef1440']
+8. Evaluation Metrics:
+  Accuracy: 0.9618320610687023
+  Precision: 0.9604393008974965
+  Recall: 0.962185870080607
+  F1-score: 0.961254066844129
+  AUROC: 0.9914651493598862
+  RMSE: 0.19536616629114087
+9. Confusion Matrix
+  [0.95945946 0.04054054],[0.03508772 0.96491228]
+
+
+------------------------------------------------------------------------
+Train_detection/Patient
+1. One-second eeg segments: 210
+2. Extracted features: 5976
+3. Classes distribution before balancing:
+  Counter(0: 190, 1: 20)
+4. Classes distribution after balancing:
+  Counter(0: 20, 1: 20)
+5. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 1.0, 1.0, 1.0, 1.0]
+  [1, 0.8571428571428571, 0.9, 0.8333333333333333, 0.8444444444444446]
+  [2, 0.6666666666666666, 0.8, 0.6666666666666666, 0.625]
+  [3, 0.6666666666666666, 0.6666666666666666, 0.6666666666666666, 0.6666666666666666]
+  [4, 0.6666666666666666, 0.8, 0.6666666666666666, 0.625]
+6. Selected features: 28
+7. Selected features names:
+  ['kurtosis_ch7', 'kurtosis_ch15', 'kurtosis_ch50']
+  ['kurtosis_ch70', 'skewness_ch15', 'time_corr_coef2']
+  ['time_corr_coef451', 'time_corr_coef579', 'time_corr_coef846']
+  ['time_corr_coef878', 'time_corr_coef935', 'time_corr_coef1355']
+  ['time_corr_coef1658', 'time_corr_coef1759', 'time_corr_coef2502']
+  ['power_band1_ch60', 'power_band3_ch49', 'power_band4_ch50']
+  ['power_band5_ch37', 'power_band5_ch53', 'power_band6_ch37']
+  ['freq_corr_coef548', 'freq_corr_coef607', 'freq_corr_coef671']
+  ['freq_corr_coef1131', 'freq_corr_coef2116', 'freq_corr_coef2553']
+  ['freq_corr_eig1']
+8. Evaluation Metrics:
+  Accuracy: 1.0
+  Precision: 1.0
+  Recall: 1.0
+  F1-score: 1.0
+  AUROC: 1.0
+  RMSE: 0.0
+9. Confusion Matrix
+  [1. 0.],[0. 1.]
+
+
+------------------------------------------------------------------------
+Train_detection/Dog
+1. One-second eeg segments: 1320
+2. Extracted features: 432
+3. Classes distribution before balancing:
+  Counter(0: 1148, 1: 172)
+4. Classes distribution after balancing:
+  Counter(0: 172, 1: 172)
+5. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.9090909090909091, 0.91, 0.9078249336870026, 0.9086075108009306]
+  [1, 0.8909090909090909, 0.8915343915343915, 0.8925729442970822, 0.8908730158730159]
+  [2, 0.9454545454545454, 0.953125, 0.9423076923076923, 0.9447975911676145]
+  [3, 0.9454545454545454, 0.9469086021505376, 0.9433333333333334, 0.9447975911676146]
+  [4, 0.8545454545454545, 0.8533333333333333, 0.8533333333333333, 0.8533333333333333]
+6. Selected features: 58
+7. Selected features names:
+  ['mean_ch9', 'mean_ch13', 'std_ch7']
+  ['std_ch12', 'kurtosis_ch1', 'kurtosis_ch3']
+  ['kurtosis_ch6', 'kurtosis_ch10', 'kurtosis_ch11']
+  ['kurtosis_ch13', 'skewness_ch2', 'skewness_ch8']
+  ['skewness_ch14', 'time_corr_coef4', 'time_corr_coef20']
+  ['time_corr_coef33', 'time_corr_coef41', 'time_corr_coef46']
+  ['time_corr_coef48', 'time_corr_coef50', 'time_corr_coef58']
+  ['time_corr_coef65', 'time_corr_coef72', 'time_corr_coef95']
+  ['time_corr_coef97', 'time_corr_coef112', 'time_corr_coef115']
+  ['time_corr_coef120', 'time_corr_eig4', 'time_corr_eig6']
+  ['time_corr_eig9', 'time_corr_eig10', 'time_corr_eig15']
+  ['time_corr_eig16', 'power_band1_ch5', 'power_band1_ch8']
+  ['power_band2_ch7', 'power_band2_ch14', 'power_band2_ch15']
+  ['power_band2_ch16', 'power_band3_ch1', 'power_band3_ch7']
+  ['power_band5_ch12', 'power_band6_ch2', 'power_band6_ch8']
+  ['freq_corr_coef38', 'freq_corr_coef40', 'freq_corr_coef66']
+  ['freq_corr_coef68', 'freq_corr_coef75', 'freq_corr_coef85']
+  ['freq_corr_coef93', 'freq_corr_coef102', 'freq_corr_coef103']
+  ['freq_corr_coef106', 'freq_corr_coef113', 'freq_corr_coef120']
+  ['freq_corr_eig15']
+8. Evaluation Metrics:
+  Accuracy: 0.9710144927536232
+  Precision: 0.962962962962963
+  Recall: 0.9772727272727273
+  F1-score: 0.9691413237924866
+  AUROC: 0.9977272727272727
+  RMSE: 0.17025130615174972
+9. Confusion Matrix
+  [0.95454545 0.04545455],[0. 1.]
+
+
+------------------------------------------------------------------------
+Train_detection/Patient
+1. One-second eeg segments: 174
+2. Extracted features: 5372
+3. Classes distribution before balancing:
+  Counter(0: 104, 1: 70)
+4. Classes distribution after balancing:
+  Counter(0: 70, 1: 70)
+5. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.9565217391304348, 0.9583333333333333, 0.9583333333333333, 0.9565217391304348]
+  [1, 0.8695652173913043, 0.8712121212121212, 0.8712121212121212, 0.8695652173913043]
+  [2, 0.9545454545454546, 0.9583333333333333, 0.9545454545454546, 0.9544513457556936]
+  [3, 0.8636363636363636, 0.8666666666666667, 0.8636363636363636, 0.8633540372670807]
+  [4, 0.9090909090909091, 0.9083333333333333, 0.9083333333333333, 0.9083333333333333]
+6. Selected features: 12
+7. Selected features names:
+  ['std_ch11', 'time_corr_coef60', 'time_corr_coef1542']
+  ['time_corr_coef1722', 'time_corr_coef1847', 'time_corr_coef1958']
+  ['time_corr_coef2147', 'power_band5_ch19', 'power_band6_ch11']
+  ['power_band6_ch19', 'power_band6_ch20', 'freq_corr_coef60']
+8. Evaluation Metrics:
+  Accuracy: 0.9642857142857143
+  Precision: 0.9615384615384616
+  Recall: 0.96875
+  F1-score: 0.9638709677419355
+  AUROC: 1.0
+  RMSE: 0.1889822365046136
+9. Confusion Matrix
+  [0.9375 0.0625],[0. 1.]
+
+
+------------------------------------------------------------------------
+Train_detection/Patient
+1. One-second eeg segments: 3141
+2. Extracted features: 432
+3. Classes distribution before balancing:
+  Counter(0: 2990, 1: 151)
+4. Classes distribution after balancing:
+  Counter(0: 151, 1: 151)
+5. Evaluation metrics CV:
+  ['Fold', 'Accuracy', 'Precision', 'Recall', 'F1-Score']
+  [0, 0.9183673469387755, 0.9285714285714286, 0.9199999999999999, 0.9180602006688963]
+  [1, 0.9166666666666666, 0.9182608695652175, 0.9182608695652175, 0.9166666666666666]
+  [2, 0.9375, 0.9444444444444444, 0.9375, 0.9372549019607843]
+  [3, 0.9166666666666666, 0.9195804195804196, 0.9166666666666667, 0.9165217391304348]
+  [4, 0.9583333333333334, 0.9615384615384616, 0.9583333333333333, 0.9582608695652175]
+6. Selected features: 65
+7. Selected features names:
+  ['mean_ch2', 'mean_ch6', 'mean_ch8']
+  ['mean_ch9', 'mean_ch11', 'mean_ch14']
+  ['mean_ch15', 'std_ch1', 'kurtosis_ch2']
+  ['kurtosis_ch4', 'kurtosis_ch5', 'kurtosis_ch6']
+  ['skewness_ch6', 'skewness_ch8', 'time_corr_coef3']
+  ['time_corr_coef17', 'time_corr_coef38', 'time_corr_coef46']
+  ['time_corr_coef62', 'time_corr_coef63', 'time_corr_coef64']
+  ['time_corr_coef67', 'time_corr_coef85', 'time_corr_coef87']
+  ['time_corr_coef94', 'time_corr_coef96', 'time_corr_coef100']
+  ['time_corr_eig10', 'time_corr_eig15', 'power_band1_ch1']
+  ['power_band1_ch10', 'power_band2_ch9', 'power_band2_ch12']
+  ['power_band2_ch14', 'power_band2_ch16', 'power_band4_ch2']
+  ['power_band4_ch3', 'power_band5_ch1', 'power_band5_ch2']
+  ['power_band5_ch6', 'freq_corr_coef8', 'freq_corr_coef10']
+  ['freq_corr_coef20', 'freq_corr_coef21', 'freq_corr_coef27']
+  ['freq_corr_coef36', 'freq_corr_coef37', 'freq_corr_coef43']
+  ['freq_corr_coef44', 'freq_corr_coef45', 'freq_corr_coef59']
+  ['freq_corr_coef65', 'freq_corr_coef67', 'freq_corr_coef86']
+  ['freq_corr_coef87', 'freq_corr_coef90', 'freq_corr_coef93']
+  ['freq_corr_coef95', 'freq_corr_coef97', 'freq_corr_coef100']
+  ['freq_corr_coef102', 'freq_corr_coef106', 'freq_corr_coef110']
+  ['freq_corr_eig7', 'freq_corr_eig8']
+8. Evaluation Metrics:
+  Accuracy: 0.9836065573770492
+  Precision: 0.9833333333333334
+  Recall: 0.984375
+  F1-score: 0.9835889157923056
+  AUROC: 0.9795258620689654
+  RMSE: 0.12803687993289598
+9. Confusion Matrix
+  [1. 0.],[0.03125 0.96875]
+
+
