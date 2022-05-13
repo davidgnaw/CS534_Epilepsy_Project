@@ -1,6 +1,6 @@
-# CS534 Epilepsy Project
+# Detection and Prediction of Seizures in Patients with Epilepsy
 
-Research Project in CS534 - Machine Learning. Epilepsy detection and prediction.
+Research Project 
 
 Seizure Detection and Prediction
 - Predicted and detected seizures in Kaggle Epilepsy dataset
